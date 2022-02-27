@@ -10,7 +10,7 @@ import alertError from "../../services/alert-error";
 })
 export class DnnSecurityCenter {
   private localizationService: LocalizationClient;
-  private resx: LocalizationViewModel;
+  // private resx: LocalizationViewModel;
 
   constructor() {
     state.moduleId = this.moduleId;
