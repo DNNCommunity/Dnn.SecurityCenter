@@ -274,7 +274,7 @@
     <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/new/develop/apiSpec/new?filename=Dnn_Modules_SecurityCenter_Controllers_SecurityController__ctor_Dnn_Modules_SecurityCenter_Services_ISecurityService_.md&amp;value=---%0Auid%3A%20Dnn.Modules.SecurityCenter.Controllers.SecurityController.%23ctor(Dnn.Modules.SecurityCenter.Services.ISecurityService)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/blob/develop/Controllers/SecurityController.cs/#L24">View Source</a>
+    <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/blob/develop/Controllers/SecurityController.cs/#L26">View Source</a>
   </span>
   <a id="Dnn_Modules_SecurityCenter_Controllers_SecurityController__ctor_" data-uid="Dnn.Modules.SecurityCenter.Controllers.SecurityController.#ctor*"></a>
   <h4 id="Dnn_Modules_SecurityCenter_Controllers_SecurityController__ctor_Dnn_Modules_SecurityCenter_Services_ISecurityService_" data-uid="Dnn.Modules.SecurityCenter.Controllers.SecurityController.#ctor(Dnn.Modules.SecurityCenter.Services.ISecurityService)">SecurityController(ISecurityService)</h4>
@@ -310,7 +310,7 @@
     <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/new/develop/apiSpec/new?filename=Dnn_Modules_SecurityCenter_Controllers_SecurityController_GetSecurityBulletins_System_String_.md&amp;value=---%0Auid%3A%20Dnn.Modules.SecurityCenter.Controllers.SecurityController.GetSecurityBulletins(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/blob/develop/Controllers/SecurityController.cs/#L34">View Source</a>
+    <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/blob/develop/Controllers/SecurityController.cs/#L36">View Source</a>
   </span>
   <a id="Dnn_Modules_SecurityCenter_Controllers_SecurityController_GetSecurityBulletins_" data-uid="Dnn.Modules.SecurityCenter.Controllers.SecurityController.GetSecurityBulletins*"></a>
   <h4 id="Dnn_Modules_SecurityCenter_Controllers_SecurityController_GetSecurityBulletins_System_String_" data-uid="Dnn.Modules.SecurityCenter.Controllers.SecurityController.GetSecurityBulletins(System.String)">GetSecurityBulletins(String)</h4>
@@ -322,6 +322,7 @@
     <pre><code class="lang-csharp hljs">[ValidateAntiForgeryToken]
 [HttpGet]
 [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.View)]
+[SwaggerResponse(HttpStatusCode.OK, typeof(SecurityBulletinsViewModel))]
 public Task&lt;IHttpActionResult&gt; GetSecurityBulletins(string versionString)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -376,7 +377,7 @@ public Task&lt;IHttpActionResult&gt; GetSecurityBulletins(string versionString)<
                     <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/new/develop/apiSpec/new?filename=Dnn_Modules_SecurityCenter_Controllers_SecurityController.md&amp;value=---%0Auid%3A%20Dnn.Modules.SecurityCenter.Controllers.SecurityController%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/blob/develop/Controllers/SecurityController.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DNNCommunity/Dnn.SecurityCenter/blob/develop/Controllers/SecurityController.cs/#L18" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

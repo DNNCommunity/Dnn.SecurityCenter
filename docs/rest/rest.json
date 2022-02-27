@@ -245,10 +245,10 @@
         ],
         "responses": {
           "200": {
-            "x-nullable": true,
+            "x-nullable": false,
             "description": "A list of DNN security bulletins.",
             "schema": {
-              "type": "file"
+              "$ref": "#/definitions/SecurityBulletinsViewModel"
             }
           }
         }
@@ -450,6 +450,57 @@
           "type": "string",
           "description": "Gets or sets the DnnSecurityCenter localized text.",
           "example": "DNN Security Center"
+        }
+      }
+    },
+    "SecurityBulletinsViewModel": {
+      "type": "object",
+      "description": "A viewmodel that represents DNN Security Bulletins.",
+      "properties": {
+        "Title": {
+          "type": "string",
+          "description": "Gets or sets the title of the RSS feed."
+        },
+        "Link": {
+          "type": "string",
+          "description": "Gets or sets the url to download DNN Platform."
+        },
+        "Description": {
+          "type": "string",
+          "description": "Gets or sets the RSS feed description."
+        },
+        "Bulletins": {
+          "type": "array",
+          "description": "Gets or sets the list of security bulletins.",
+          "items": {
+            "$ref": "#/definitions/Bulletin"
+          }
+        }
+      }
+    },
+    "Bulletin": {
+      "type": "object",
+      "description": "Represents a single DNN Security Bulletin.",
+      "required": [
+        "PublicationDateUtc"
+      ],
+      "properties": {
+        "Link": {
+          "type": "string",
+          "description": "Gets or sets a link to the detailed security bulletin."
+        },
+        "Title": {
+          "type": "string",
+          "description": "Gets or sets the title of the bulletin."
+        },
+        "Description": {
+          "type": "string",
+          "description": "Gets or sets the short description of the bulletin."
+        },
+        "PublicationDateUtc": {
+          "type": "string",
+          "description": "Gets or sets a string representing the date of announcement.",
+          "format": "date-time"
         }
       }
     }

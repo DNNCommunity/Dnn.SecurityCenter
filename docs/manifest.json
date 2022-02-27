@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Dnn.Modules.SecurityCenter.Controllers.SecurityController.html",
-          "hash": "ncXzBXuWJssHrnkTlPTRbA=="
+          "hash": "fb8t323WHubYLO0tFe83iw=="
         }
       },
       "is_incremental": false,
@@ -728,6 +728,114 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin._constructor_.html",
+          "hash": "cWy0Evz0ObYGC/dgRbnXXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin.description.html",
+          "hash": "MQDepun9lyZlzXDAdhpUxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin.fromjs.html",
+          "hash": "cAbaPu8ZxHxD/vvMACdecg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin.init.html",
+          "hash": "rQhAIr1sTcCfpj/eklepPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin.link.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin.link.html",
+          "hash": "YmYuVw2XsvwQFhYYcCkRSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin.html",
+          "hash": "xxlkYDipWBSNC9yrGvicew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin.publicationdateutc.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin.publicationdateutc.html",
+          "hash": "FwTspsDN5V1887I881NyXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin.title.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin.title.html",
+          "hash": "MadSSCZdP4jO+gIqR/Dm7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.bulletin.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.bulletin.tojson.html",
+          "hash": "tuf+cka2DeBJsoJlUYij2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "client/dnn-securitycenter.clientbase._constructor_.md",
       "output": {
         ".html": {
@@ -992,66 +1100,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.fileresponse.data.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.fileresponse.data.html",
-          "hash": "6goH+JSJt3b8GeK50FUEKQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.fileresponse.filename.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.fileresponse.filename.html",
-          "hash": "zgK6nabm/kBI+nflJj/wZQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.fileresponse.headers.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.fileresponse.headers.html",
-          "hash": "XPo1BVtfazFqyRBK9BydxQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.fileresponse.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.fileresponse.html",
-          "hash": "xe+nWIwRh7W6d2JZ1rYvTQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.fileresponse.status.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.fileresponse.status.html",
-          "hash": "83PIPwkky9CoEVQdmYZY7g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "client/dnn-securitycenter.iargumentexception.md",
       "output": {
         ".html": {
@@ -1081,6 +1129,66 @@
         ".html": {
           "relative_path": "client/dnn-securitycenter.iargumentexception.paramname.html",
           "hash": "WtoSm9wM7lOiI4nvQnJsWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.ibulletin.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.ibulletin.description.html",
+          "hash": "gdqXiUaHkTxbimiVf7ocYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.ibulletin.link.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.ibulletin.link.html",
+          "hash": "HylZRyDLkE3id5Kr1EtbGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.ibulletin.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.ibulletin.html",
+          "hash": "URzUf/vt8KWJbrqRjI9sUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.ibulletin.publicationdateutc.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.ibulletin.publicationdateutc.html",
+          "hash": "OMlcmgdOtgQPhG2DRAyiRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.ibulletin.title.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.ibulletin.title.html",
+          "hash": "VN4LExc0bmTW0veo0KXVxQ=="
         }
       },
       "is_incremental": false,
@@ -1357,6 +1465,66 @@
         ".html": {
           "relative_path": "client/dnn-securitycenter.imodelvalidationinfo.namerequired.html",
           "hash": "rk5EjufU0pA59cBYUq3/XQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.bulletins.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.bulletins.html",
+          "hash": "ECyrDLGfeKV1ccm+O4vkLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.description.html",
+          "hash": "koTL3/VxNLjtHWcJaDsPJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.link.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.link.html",
+          "hash": "z/Aem7LWSybIRpRmrRkkaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.html",
+          "hash": "G+HtFWrBYvV8/m6eaLFWOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.title.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.isecuritybulletinsviewmodel.title.html",
+          "hash": "Xg1V2EHp/t1/RLs8L65BMQ=="
         }
       },
       "is_incremental": false,
@@ -1944,7 +2112,7 @@
       "output": {
         ".html": {
           "relative_path": "client/dnn-securitycenter.html",
-          "hash": "FNCq7KS+CyGL2qb72Qditw=="
+          "hash": "rvsRx/zdQTTZomxGsdthKQ=="
         }
       },
       "is_incremental": false,
@@ -2036,6 +2204,114 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel._constructor_.html",
+          "hash": "vAho2iEjEB2klnB+bk3OrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.bulletins.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.bulletins.html",
+          "hash": "3XuA2XCfI3nDz6G5P26nyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.description.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.description.html",
+          "hash": "M0z1YIe/utSeq2mdBihoWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.fromjs.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.fromjs.html",
+          "hash": "XuhzMdFIjxkbnAcRde+b9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.init.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.init.html",
+          "hash": "W9I5N3mCyQcBBvOyPm4opw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.link.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.link.html",
+          "hash": "qqxi96kWyuh9/yYRHqGOUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.html",
+          "hash": "gyEfaU7hHjrc4mXjiP9kTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.title.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.title.html",
+          "hash": "de263ABSK0DjjUtDV1MueQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.tojson.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securitybulletinsviewmodel.tojson.html",
+          "hash": "rNeXktrZnfG1ilrHNFZqNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "client/dnn-securitycenter.securityclient._constructor_.md",
       "output": {
         ".html": {
@@ -2052,7 +2328,7 @@
       "output": {
         ".html": {
           "relative_path": "client/dnn-securitycenter.securityclient.getsecuritybulletins.html",
-          "hash": "Dokw4jN82cvNIR6+sOJ9ZA=="
+          "hash": "HMRbF+ZBHFbqS4mcdpKuzA=="
         }
       },
       "is_incremental": false,
@@ -2088,7 +2364,7 @@
       "output": {
         ".html": {
           "relative_path": "client/dnn-securitycenter.securityclient.processgetsecuritybulletins.html",
-          "hash": "g3OOarVCe1EVdu1Ch6R5Ng=="
+          "hash": "GqFk3H7qXwovoVy0yuqNZw=="
         }
       },
       "is_incremental": false,
@@ -2328,7 +2604,7 @@
       "output": {
         ".html": {
           "relative_path": "client/toc.html",
-          "hash": "4I2KUbj32SYgEcy3AH11Iw=="
+          "hash": "EAPlKLbtJoVgCu5qaHiEhA=="
         }
       },
       "is_incremental": false,
@@ -2513,7 +2789,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 156,
+          "total_file_count": 179,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

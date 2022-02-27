@@ -32,7 +32,7 @@
   "api/Dnn.Modules.SecurityCenter.Controllers.SecurityController.html": {
     "href": "api/Dnn.Modules.SecurityCenter.Controllers.SecurityController.html",
     "title": "Class SecurityController",
-    "keywords": "Class SecurityController Provides information about DNN security services. Inheritance System.Object System.Web.Http.ApiController DotNetNuke.Web.Api.DnnApiController ModuleApiController SecurityController Implements System.Web.Http.Controllers.IHttpController System.IDisposable Inherited Members ModuleApiController.UserInfo ModuleApiController.CanEdit DotNetNuke.Web.Api.DnnApiController.PortalSettings DotNetNuke.Web.Api.DnnApiController.ActiveModule System.Web.Http.ApiController.ExecuteAsync(System.Web.Http.Controllers.HttpControllerContext, System.Threading.CancellationToken) System.Web.Http.ApiController.Validate<TEntity>(TEntity) System.Web.Http.ApiController.Validate<TEntity>(TEntity, System.String) System.Web.Http.ApiController.BadRequest() System.Web.Http.ApiController.BadRequest(System.String) System.Web.Http.ApiController.BadRequest(System.Web.Http.ModelBinding.ModelStateDictionary) System.Web.Http.ApiController.Conflict() System.Web.Http.ApiController.Content<T>(System.Net.HttpStatusCode, T) System.Web.Http.ApiController.Content<T>(System.Net.HttpStatusCode, T, System.Net.Http.Formatting.MediaTypeFormatter) System.Web.Http.ApiController.Content<T>(System.Net.HttpStatusCode, T, System.Net.Http.Formatting.MediaTypeFormatter, System.String) System.Web.Http.ApiController.Content<T>(System.Net.HttpStatusCode, T, System.Net.Http.Formatting.MediaTypeFormatter, System.Net.Http.Headers.MediaTypeHeaderValue) System.Web.Http.ApiController.Created<T>(System.String, T) System.Web.Http.ApiController.Created<T>(System.Uri, T) System.Web.Http.ApiController.CreatedAtRoute<T>(System.String, System.Object, T) System.Web.Http.ApiController.CreatedAtRoute<T>(System.String, System.Collections.Generic.IDictionary<System.String, System.Object>, T) System.Web.Http.ApiController.InternalServerError() System.Web.Http.ApiController.InternalServerError(System.Exception) System.Web.Http.ApiController.Json<T>(T) System.Web.Http.ApiController.Json<T>(T, Newtonsoft.Json.JsonSerializerSettings) System.Web.Http.ApiController.Json<T>(T, Newtonsoft.Json.JsonSerializerSettings, System.Text.Encoding) System.Web.Http.ApiController.NotFound() System.Web.Http.ApiController.Ok() System.Web.Http.ApiController.Ok<T>(T) System.Web.Http.ApiController.Redirect(System.String) System.Web.Http.ApiController.Redirect(System.Uri) System.Web.Http.ApiController.RedirectToRoute(System.String, System.Object) System.Web.Http.ApiController.RedirectToRoute(System.String, System.Collections.Generic.IDictionary<System.String, System.Object>) System.Web.Http.ApiController.ResponseMessage(System.Net.Http.HttpResponseMessage) System.Web.Http.ApiController.StatusCode(System.Net.HttpStatusCode) System.Web.Http.ApiController.Unauthorized(System.Net.Http.Headers.AuthenticationHeaderValue[]) System.Web.Http.ApiController.Unauthorized(System.Collections.Generic.IEnumerable<System.Net.Http.Headers.AuthenticationHeaderValue>) System.Web.Http.ApiController.Initialize(System.Web.Http.Controllers.HttpControllerContext) System.Web.Http.ApiController.Dispose() System.Web.Http.ApiController.Dispose(System.Boolean) System.Web.Http.ApiController.Configuration System.Web.Http.ApiController.ControllerContext System.Web.Http.ApiController.ActionContext System.Web.Http.ApiController.ModelState System.Web.Http.ApiController.Request System.Web.Http.ApiController.RequestContext System.Web.Http.ApiController.Url System.Web.Http.ApiController.User System.Object.ToString() System.Object.Equals(System.Object) System.Object.Equals(System.Object, System.Object) System.Object.ReferenceEquals(System.Object, System.Object) System.Object.GetHashCode() System.Object.GetType() System.Object.MemberwiseClone() Namespace : Dnn.Modules.SecurityCenter.Controllers Assembly : Dnn.Modules.SecurityCenter.dll Syntax public class SecurityController : ModuleApiController, IHttpController, IDisposable Constructors | Improve this Doc View Source SecurityController(ISecurityService) Initializes a new instance of the SecurityController class. Declaration public SecurityController(ISecurityService securityService) Parameters Type Name Description ISecurityService securityService Provides access to DNN security bulletins service. Methods | Improve this Doc View Source GetSecurityBulletins(String) Gets all the DNN security bulletins. Declaration [ValidateAntiForgeryToken] [HttpGet] [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.View)] public Task<IHttpActionResult> GetSecurityBulletins(string versionString) Parameters Type Name Description System.String versionString The version for which to get the security bulletins for in the format 090202 for v9.9.2. Returns Type Description System.Threading.Tasks.Task < System.Web.Http.IHttpActionResult > A list of DNN security bulletins. Implements System.Web.Http.Controllers.IHttpController System.IDisposable"
+    "keywords": "Class SecurityController Provides information about DNN security services. Inheritance System.Object System.Web.Http.ApiController DotNetNuke.Web.Api.DnnApiController ModuleApiController SecurityController Implements System.Web.Http.Controllers.IHttpController System.IDisposable Inherited Members ModuleApiController.UserInfo ModuleApiController.CanEdit DotNetNuke.Web.Api.DnnApiController.PortalSettings DotNetNuke.Web.Api.DnnApiController.ActiveModule System.Web.Http.ApiController.ExecuteAsync(System.Web.Http.Controllers.HttpControllerContext, System.Threading.CancellationToken) System.Web.Http.ApiController.Validate<TEntity>(TEntity) System.Web.Http.ApiController.Validate<TEntity>(TEntity, System.String) System.Web.Http.ApiController.BadRequest() System.Web.Http.ApiController.BadRequest(System.String) System.Web.Http.ApiController.BadRequest(System.Web.Http.ModelBinding.ModelStateDictionary) System.Web.Http.ApiController.Conflict() System.Web.Http.ApiController.Content<T>(System.Net.HttpStatusCode, T) System.Web.Http.ApiController.Content<T>(System.Net.HttpStatusCode, T, System.Net.Http.Formatting.MediaTypeFormatter) System.Web.Http.ApiController.Content<T>(System.Net.HttpStatusCode, T, System.Net.Http.Formatting.MediaTypeFormatter, System.String) System.Web.Http.ApiController.Content<T>(System.Net.HttpStatusCode, T, System.Net.Http.Formatting.MediaTypeFormatter, System.Net.Http.Headers.MediaTypeHeaderValue) System.Web.Http.ApiController.Created<T>(System.String, T) System.Web.Http.ApiController.Created<T>(System.Uri, T) System.Web.Http.ApiController.CreatedAtRoute<T>(System.String, System.Object, T) System.Web.Http.ApiController.CreatedAtRoute<T>(System.String, System.Collections.Generic.IDictionary<System.String, System.Object>, T) System.Web.Http.ApiController.InternalServerError() System.Web.Http.ApiController.InternalServerError(System.Exception) System.Web.Http.ApiController.Json<T>(T) System.Web.Http.ApiController.Json<T>(T, Newtonsoft.Json.JsonSerializerSettings) System.Web.Http.ApiController.Json<T>(T, Newtonsoft.Json.JsonSerializerSettings, System.Text.Encoding) System.Web.Http.ApiController.NotFound() System.Web.Http.ApiController.Ok() System.Web.Http.ApiController.Ok<T>(T) System.Web.Http.ApiController.Redirect(System.String) System.Web.Http.ApiController.Redirect(System.Uri) System.Web.Http.ApiController.RedirectToRoute(System.String, System.Object) System.Web.Http.ApiController.RedirectToRoute(System.String, System.Collections.Generic.IDictionary<System.String, System.Object>) System.Web.Http.ApiController.ResponseMessage(System.Net.Http.HttpResponseMessage) System.Web.Http.ApiController.StatusCode(System.Net.HttpStatusCode) System.Web.Http.ApiController.Unauthorized(System.Net.Http.Headers.AuthenticationHeaderValue[]) System.Web.Http.ApiController.Unauthorized(System.Collections.Generic.IEnumerable<System.Net.Http.Headers.AuthenticationHeaderValue>) System.Web.Http.ApiController.Initialize(System.Web.Http.Controllers.HttpControllerContext) System.Web.Http.ApiController.Dispose() System.Web.Http.ApiController.Dispose(System.Boolean) System.Web.Http.ApiController.Configuration System.Web.Http.ApiController.ControllerContext System.Web.Http.ApiController.ActionContext System.Web.Http.ApiController.ModelState System.Web.Http.ApiController.Request System.Web.Http.ApiController.RequestContext System.Web.Http.ApiController.Url System.Web.Http.ApiController.User System.Object.ToString() System.Object.Equals(System.Object) System.Object.Equals(System.Object, System.Object) System.Object.ReferenceEquals(System.Object, System.Object) System.Object.GetHashCode() System.Object.GetType() System.Object.MemberwiseClone() Namespace : Dnn.Modules.SecurityCenter.Controllers Assembly : Dnn.Modules.SecurityCenter.dll Syntax public class SecurityController : ModuleApiController, IHttpController, IDisposable Constructors | Improve this Doc View Source SecurityController(ISecurityService) Initializes a new instance of the SecurityController class. Declaration public SecurityController(ISecurityService securityService) Parameters Type Name Description ISecurityService securityService Provides access to DNN security bulletins service. Methods | Improve this Doc View Source GetSecurityBulletins(String) Gets all the DNN security bulletins. Declaration [ValidateAntiForgeryToken] [HttpGet] [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.View)] [SwaggerResponse(HttpStatusCode.OK, typeof(SecurityBulletinsViewModel))] public Task<IHttpActionResult> GetSecurityBulletins(string versionString) Parameters Type Name Description System.String versionString The version for which to get the security bulletins for in the format 090202 for v9.9.2. Returns Type Description System.Threading.Tasks.Task < System.Web.Http.IHttpActionResult > A list of DNN security bulletins. Implements System.Web.Http.Controllers.IHttpController System.IDisposable"
   },
   "api/Dnn.Modules.SecurityCenter.Controllers.ServiceRouteMapper.html": {
     "href": "api/Dnn.Modules.SecurityCenter.Controllers.ServiceRouteMapper.html",
@@ -284,6 +284,51 @@
     "title": "ArgumentException.toJSON() method",
     "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > ArgumentException > toJSON ArgumentException.toJSON() method Signature: toJSON(data?: any): any; Parameters Parameter Type Description data any Returns: any"
   },
+  "client/dnn-securitycenter.bulletin._constructor_.html": {
+    "href": "client/dnn-securitycenter.bulletin._constructor_.html",
+    "title": "Bulletin.(constructor)",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin > (constructor) Bulletin.(constructor) Constructs a new instance of the Bulletin class Signature: constructor(data?: IBulletin); Parameters Parameter Type Description data IBulletin"
+  },
+  "client/dnn-securitycenter.bulletin.description.html": {
+    "href": "client/dnn-securitycenter.bulletin.description.html",
+    "title": "Bulletin.description property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin > description Bulletin.description property Gets or sets the short description of the bulletin. Signature: description?: string | undefined;"
+  },
+  "client/dnn-securitycenter.bulletin.fromjs.html": {
+    "href": "client/dnn-securitycenter.bulletin.fromjs.html",
+    "title": "Bulletin.fromJS() method",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin > fromJS Bulletin.fromJS() method Signature: static fromJS(data: any): Bulletin; Parameters Parameter Type Description data any Returns: Bulletin"
+  },
+  "client/dnn-securitycenter.bulletin.html": {
+    "href": "client/dnn-securitycenter.bulletin.html",
+    "title": "Bulletin class",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin Bulletin class Represents a single DNN Security Bulletin. Signature: export declare class Bulletin implements IBulletin Implements: IBulletin Constructors Constructor Modifiers Description (constructor)(data) Constructs a new instance of the Bulletin class Properties Property Modifiers Type Description description? string | undefined (Optional) Gets or sets the short description of the bulletin. link? string | undefined (Optional) Gets or sets a link to the detailed security bulletin. publicationDateUtc Date Gets or sets a string representing the date of announcement. title? string | undefined (Optional) Gets or sets the title of the bulletin. Methods Method Modifiers Description fromJS(data) static init(_data) toJSON(data)"
+  },
+  "client/dnn-securitycenter.bulletin.init.html": {
+    "href": "client/dnn-securitycenter.bulletin.init.html",
+    "title": "Bulletin.init() method",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin > init Bulletin.init() method Signature: init(_data?: any): void; Parameters Parameter Type Description _data any Returns: void"
+  },
+  "client/dnn-securitycenter.bulletin.link.html": {
+    "href": "client/dnn-securitycenter.bulletin.link.html",
+    "title": "Bulletin.link property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin > link Bulletin.link property Gets or sets a link to the detailed security bulletin. Signature: link?: string | undefined;"
+  },
+  "client/dnn-securitycenter.bulletin.publicationdateutc.html": {
+    "href": "client/dnn-securitycenter.bulletin.publicationdateutc.html",
+    "title": "Bulletin.publicationDateUtc property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin > publicationDateUtc Bulletin.publicationDateUtc property Gets or sets a string representing the date of announcement. Signature: publicationDateUtc: Date;"
+  },
+  "client/dnn-securitycenter.bulletin.title.html": {
+    "href": "client/dnn-securitycenter.bulletin.title.html",
+    "title": "Bulletin.title property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin > title Bulletin.title property Gets or sets the title of the bulletin. Signature: title?: string | undefined;"
+  },
+  "client/dnn-securitycenter.bulletin.tojson.html": {
+    "href": "client/dnn-securitycenter.bulletin.tojson.html",
+    "title": "Bulletin.toJSON() method",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Bulletin > toJSON Bulletin.toJSON() method Signature: toJSON(data?: any): any; Parameters Parameter Type Description data any Returns: any"
+  },
   "client/dnn-securitycenter.clientbase._constructor_.html": {
     "href": "client/dnn-securitycenter.clientbase._constructor_.html",
     "title": "ClientBase.(constructor)",
@@ -394,35 +439,10 @@
     "title": "Exception.toJSON() method",
     "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > Exception > toJSON Exception.toJSON() method Signature: toJSON(data?: any): any; Parameters Parameter Type Description data any Returns: any"
   },
-  "client/dnn-securitycenter.fileresponse.data.html": {
-    "href": "client/dnn-securitycenter.fileresponse.data.html",
-    "title": "FileResponse.data property",
-    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > FileResponse > data FileResponse.data property Signature: data: Blob;"
-  },
-  "client/dnn-securitycenter.fileresponse.filename.html": {
-    "href": "client/dnn-securitycenter.fileresponse.filename.html",
-    "title": "FileResponse.fileName property",
-    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > FileResponse > fileName FileResponse.fileName property Signature: fileName?: string;"
-  },
-  "client/dnn-securitycenter.fileresponse.headers.html": {
-    "href": "client/dnn-securitycenter.fileresponse.headers.html",
-    "title": "FileResponse.headers property",
-    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > FileResponse > headers FileResponse.headers property Signature: headers?: { [name: string]: any; };"
-  },
-  "client/dnn-securitycenter.fileresponse.html": {
-    "href": "client/dnn-securitycenter.fileresponse.html",
-    "title": "FileResponse interface",
-    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > FileResponse FileResponse interface Signature: export interface FileResponse Properties Property Type Description data Blob fileName? string (Optional) headers? { [name: string]: any; } (Optional) status number"
-  },
-  "client/dnn-securitycenter.fileresponse.status.html": {
-    "href": "client/dnn-securitycenter.fileresponse.status.html",
-    "title": "FileResponse.status property",
-    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > FileResponse > status FileResponse.status property Signature: status: number;"
-  },
   "client/dnn-securitycenter.html": {
     "href": "client/dnn-securitycenter.html",
     "title": "dnn-securitycenter package",
-    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter dnn-securitycenter package Classes Class Description ApiException ArgumentException ClientBase CreateItemDTO Data transfer object to create a new item. Exception ItemClient ItemsPageViewModel Represents a page of items, Item. ItemViewModel Represents the basic information about an item. LocalizationClient LocalizationViewModel A viewmodel that exposes all resource keys in strong types. ModelValidationInfo Localized strings for the ModelValidation resources. SecurityClient SystemException UIInfo Localized strings for the UI resources. UpdateItemDTO Data transfer object used to update an item. Interfaces Interface Description ConfigureRequest FileResponse IArgumentException ICreateItemDTO Data transfer object to create a new item. IException IItemsPageViewModel Represents a page of items, Item. IItemViewModel Represents the basic information about an item. ILocalizationViewModel A viewmodel that exposes all resource keys in strong types. IModelValidationInfo Localized strings for the ModelValidation resources. ISystemException IUIInfo Localized strings for the UI resources. IUpdateItemDTO Data transfer object used to update an item."
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter dnn-securitycenter package Classes Class Description ApiException ArgumentException Bulletin Represents a single DNN Security Bulletin. ClientBase CreateItemDTO Data transfer object to create a new item. Exception ItemClient ItemsPageViewModel Represents a page of items, Item. ItemViewModel Represents the basic information about an item. LocalizationClient LocalizationViewModel A viewmodel that exposes all resource keys in strong types. ModelValidationInfo Localized strings for the ModelValidation resources. SecurityBulletinsViewModel A viewmodel that represents DNN Security Bulletins. SecurityClient SystemException UIInfo Localized strings for the UI resources. UpdateItemDTO Data transfer object used to update an item. Interfaces Interface Description ConfigureRequest IArgumentException IBulletin Represents a single DNN Security Bulletin. ICreateItemDTO Data transfer object to create a new item. IException IItemsPageViewModel Represents a page of items, Item. IItemViewModel Represents the basic information about an item. ILocalizationViewModel A viewmodel that exposes all resource keys in strong types. IModelValidationInfo Localized strings for the ModelValidation resources. ISecurityBulletinsViewModel A viewmodel that represents DNN Security Bulletins. ISystemException IUIInfo Localized strings for the UI resources. IUpdateItemDTO Data transfer object used to update an item."
   },
   "client/dnn-securitycenter.iargumentexception.html": {
     "href": "client/dnn-securitycenter.iargumentexception.html",
@@ -438,6 +458,31 @@
     "href": "client/dnn-securitycenter.iargumentexception.paramname.html",
     "title": "IArgumentException.paramName property",
     "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > IArgumentException > paramName IArgumentException.paramName property Signature: paramName?: string | undefined;"
+  },
+  "client/dnn-securitycenter.ibulletin.description.html": {
+    "href": "client/dnn-securitycenter.ibulletin.description.html",
+    "title": "IBulletin.description property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > IBulletin > description IBulletin.description property Gets or sets the short description of the bulletin. Signature: description?: string | undefined;"
+  },
+  "client/dnn-securitycenter.ibulletin.html": {
+    "href": "client/dnn-securitycenter.ibulletin.html",
+    "title": "IBulletin interface",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > IBulletin IBulletin interface Represents a single DNN Security Bulletin. Signature: export interface IBulletin Properties Property Type Description description? string | undefined (Optional) Gets or sets the short description of the bulletin. link? string | undefined (Optional) Gets or sets a link to the detailed security bulletin. publicationDateUtc Date Gets or sets a string representing the date of announcement. title? string | undefined (Optional) Gets or sets the title of the bulletin."
+  },
+  "client/dnn-securitycenter.ibulletin.link.html": {
+    "href": "client/dnn-securitycenter.ibulletin.link.html",
+    "title": "IBulletin.link property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > IBulletin > link IBulletin.link property Gets or sets a link to the detailed security bulletin. Signature: link?: string | undefined;"
+  },
+  "client/dnn-securitycenter.ibulletin.publicationdateutc.html": {
+    "href": "client/dnn-securitycenter.ibulletin.publicationdateutc.html",
+    "title": "IBulletin.publicationDateUtc property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > IBulletin > publicationDateUtc IBulletin.publicationDateUtc property Gets or sets a string representing the date of announcement. Signature: publicationDateUtc: Date;"
+  },
+  "client/dnn-securitycenter.ibulletin.title.html": {
+    "href": "client/dnn-securitycenter.ibulletin.title.html",
+    "title": "IBulletin.title property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > IBulletin > title IBulletin.title property Gets or sets the title of the bulletin. Signature: title?: string | undefined;"
   },
   "client/dnn-securitycenter.icreateitemdto.description.html": {
     "href": "client/dnn-securitycenter.icreateitemdto.description.html",
@@ -553,6 +598,31 @@
     "href": "client/dnn-securitycenter.imodelvalidationinfo.namerequired.html",
     "title": "IModelValidationInfo.nameRequired property",
     "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > IModelValidationInfo > nameRequired IModelValidationInfo.nameRequired property Gets or sets the NameRequired localized text. Signature: nameRequired?: string | undefined;"
+  },
+  "client/dnn-securitycenter.isecuritybulletinsviewmodel.bulletins.html": {
+    "href": "client/dnn-securitycenter.isecuritybulletinsviewmodel.bulletins.html",
+    "title": "ISecurityBulletinsViewModel.bulletins property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > ISecurityBulletinsViewModel > bulletins ISecurityBulletinsViewModel.bulletins property Gets or sets the list of security bulletins. Signature: bulletins?: Bulletin[] | undefined;"
+  },
+  "client/dnn-securitycenter.isecuritybulletinsviewmodel.description.html": {
+    "href": "client/dnn-securitycenter.isecuritybulletinsviewmodel.description.html",
+    "title": "ISecurityBulletinsViewModel.description property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > ISecurityBulletinsViewModel > description ISecurityBulletinsViewModel.description property Gets or sets the RSS feed description. Signature: description?: string | undefined;"
+  },
+  "client/dnn-securitycenter.isecuritybulletinsviewmodel.html": {
+    "href": "client/dnn-securitycenter.isecuritybulletinsviewmodel.html",
+    "title": "ISecurityBulletinsViewModel interface",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > ISecurityBulletinsViewModel ISecurityBulletinsViewModel interface A viewmodel that represents DNN Security Bulletins. Signature: export interface ISecurityBulletinsViewModel Properties Property Type Description bulletins? Bulletin <!-- --> [] | undefined (Optional) Gets or sets the list of security bulletins. description? string | undefined (Optional) Gets or sets the RSS feed description. link? string | undefined (Optional) Gets or sets the url to download DNN Platform. title? string | undefined (Optional) Gets or sets the title of the RSS feed."
+  },
+  "client/dnn-securitycenter.isecuritybulletinsviewmodel.link.html": {
+    "href": "client/dnn-securitycenter.isecuritybulletinsviewmodel.link.html",
+    "title": "ISecurityBulletinsViewModel.link property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > ISecurityBulletinsViewModel > link ISecurityBulletinsViewModel.link property Gets or sets the url to download DNN Platform. Signature: link?: string | undefined;"
+  },
+  "client/dnn-securitycenter.isecuritybulletinsviewmodel.title.html": {
+    "href": "client/dnn-securitycenter.isecuritybulletinsviewmodel.title.html",
+    "title": "ISecurityBulletinsViewModel.title property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > ISecurityBulletinsViewModel > title ISecurityBulletinsViewModel.title property Gets or sets the title of the RSS feed. Signature: title?: string | undefined;"
   },
   "client/dnn-securitycenter.isystemexception.html": {
     "href": "client/dnn-securitycenter.isystemexception.html",
@@ -829,6 +899,51 @@
     "title": "ModelValidationInfo.toJSON() method",
     "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > ModelValidationInfo > toJSON ModelValidationInfo.toJSON() method Signature: toJSON(data?: any): any; Parameters Parameter Type Description data any Returns: any"
   },
+  "client/dnn-securitycenter.securitybulletinsviewmodel._constructor_.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel._constructor_.html",
+    "title": "SecurityBulletinsViewModel.(constructor)",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel > (constructor) SecurityBulletinsViewModel.(constructor) Constructs a new instance of the SecurityBulletinsViewModel class Signature: constructor(data?: ISecurityBulletinsViewModel); Parameters Parameter Type Description data ISecurityBulletinsViewModel"
+  },
+  "client/dnn-securitycenter.securitybulletinsviewmodel.bulletins.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel.bulletins.html",
+    "title": "SecurityBulletinsViewModel.bulletins property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel > bulletins SecurityBulletinsViewModel.bulletins property Gets or sets the list of security bulletins. Signature: bulletins?: Bulletin[] | undefined;"
+  },
+  "client/dnn-securitycenter.securitybulletinsviewmodel.description.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel.description.html",
+    "title": "SecurityBulletinsViewModel.description property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel > description SecurityBulletinsViewModel.description property Gets or sets the RSS feed description. Signature: description?: string | undefined;"
+  },
+  "client/dnn-securitycenter.securitybulletinsviewmodel.fromjs.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel.fromjs.html",
+    "title": "SecurityBulletinsViewModel.fromJS() method",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel > fromJS SecurityBulletinsViewModel.fromJS() method Signature: static fromJS(data: any): SecurityBulletinsViewModel; Parameters Parameter Type Description data any Returns: SecurityBulletinsViewModel"
+  },
+  "client/dnn-securitycenter.securitybulletinsviewmodel.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel.html",
+    "title": "SecurityBulletinsViewModel class",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel SecurityBulletinsViewModel class A viewmodel that represents DNN Security Bulletins. Signature: export declare class SecurityBulletinsViewModel implements ISecurityBulletinsViewModel Implements: ISecurityBulletinsViewModel Constructors Constructor Modifiers Description (constructor)(data) Constructs a new instance of the SecurityBulletinsViewModel class Properties Property Modifiers Type Description bulletins? Bulletin <!-- --> [] | undefined (Optional) Gets or sets the list of security bulletins. description? string | undefined (Optional) Gets or sets the RSS feed description. link? string | undefined (Optional) Gets or sets the url to download DNN Platform. title? string | undefined (Optional) Gets or sets the title of the RSS feed. Methods Method Modifiers Description fromJS(data) static init(_data) toJSON(data)"
+  },
+  "client/dnn-securitycenter.securitybulletinsviewmodel.init.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel.init.html",
+    "title": "SecurityBulletinsViewModel.init() method",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel > init SecurityBulletinsViewModel.init() method Signature: init(_data?: any): void; Parameters Parameter Type Description _data any Returns: void"
+  },
+  "client/dnn-securitycenter.securitybulletinsviewmodel.link.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel.link.html",
+    "title": "SecurityBulletinsViewModel.link property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel > link SecurityBulletinsViewModel.link property Gets or sets the url to download DNN Platform. Signature: link?: string | undefined;"
+  },
+  "client/dnn-securitycenter.securitybulletinsviewmodel.title.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel.title.html",
+    "title": "SecurityBulletinsViewModel.title property",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel > title SecurityBulletinsViewModel.title property Gets or sets the title of the RSS feed. Signature: title?: string | undefined;"
+  },
+  "client/dnn-securitycenter.securitybulletinsviewmodel.tojson.html": {
+    "href": "client/dnn-securitycenter.securitybulletinsviewmodel.tojson.html",
+    "title": "SecurityBulletinsViewModel.toJSON() method",
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityBulletinsViewModel > toJSON SecurityBulletinsViewModel.toJSON() method Signature: toJSON(data?: any): any; Parameters Parameter Type Description data any Returns: any"
+  },
   "client/dnn-securitycenter.securityclient._constructor_.html": {
     "href": "client/dnn-securitycenter.securityclient._constructor_.html",
     "title": "SecurityClient.(constructor)",
@@ -837,7 +952,7 @@
   "client/dnn-securitycenter.securityclient.getsecuritybulletins.html": {
     "href": "client/dnn-securitycenter.securityclient.getsecuritybulletins.html",
     "title": "SecurityClient.getSecurityBulletins() method",
-    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityClient > getSecurityBulletins SecurityClient.getSecurityBulletins() method Gets all the DNN security bulletins. Signature: getSecurityBulletins(versionString: string | null, signal?: AbortSignal | undefined): Promise<FileResponse | null>; Parameters Parameter Type Description versionString string | null The version for which to get the security bulletins for in the format 090202 for v9.9.2. A list of DNN security bulletins. signal AbortSignal | undefined Returns: Promise< FileResponse | null>"
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityClient > getSecurityBulletins SecurityClient.getSecurityBulletins() method Gets all the DNN security bulletins. Signature: getSecurityBulletins(versionString: string | null, signal?: AbortSignal | undefined): Promise<SecurityBulletinsViewModel>; Parameters Parameter Type Description versionString string | null The version for which to get the security bulletins for in the format 090202 for v9.9.2. A list of DNN security bulletins. signal AbortSignal | undefined Returns: Promise< SecurityBulletinsViewModel <!-- --> >"
   },
   "client/dnn-securitycenter.securityclient.html": {
     "href": "client/dnn-securitycenter.securityclient.html",
@@ -852,7 +967,7 @@
   "client/dnn-securitycenter.securityclient.processgetsecuritybulletins.html": {
     "href": "client/dnn-securitycenter.securityclient.processgetsecuritybulletins.html",
     "title": "SecurityClient.processGetSecurityBulletins() method",
-    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityClient > processGetSecurityBulletins SecurityClient.processGetSecurityBulletins() method Signature: protected processGetSecurityBulletins(response: Response): Promise<FileResponse | null>; Parameters Parameter Type Description response Response Returns: Promise< FileResponse | null>"
+    "keywords": "<!-- Do not edit this file. It is automatically generated by API Documenter. --> Home > dnn-securitycenter > SecurityClient > processGetSecurityBulletins SecurityClient.processGetSecurityBulletins() method Signature: protected processGetSecurityBulletins(response: Response): Promise<SecurityBulletinsViewModel>; Parameters Parameter Type Description response Response Returns: Promise< SecurityBulletinsViewModel <!-- --> >"
   },
   "client/dnn-securitycenter.systemexception._constructor_.html": {
     "href": "client/dnn-securitycenter.systemexception._constructor_.html",
