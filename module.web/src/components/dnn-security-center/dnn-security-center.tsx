@@ -10,7 +10,7 @@ import alertError from "../../services/alert-error";
 })
 export class DnnSecurityCenter {
   private localizationService: LocalizationClient;
-  // private resx: LocalizationViewModel;
+  private resx: LocalizationViewModel;
 
   constructor() {
     state.moduleId = this.moduleId;
@@ -54,9 +54,9 @@ export class DnnSecurityCenter {
   render() {
     return <Host>
       <div>
-        <h1>DNN Security Center</h1>
+        <h1>{this.resx.uI.dnnSecurityCenter}</h1>
         <div>
-          DNN Platform Version: &nbsp;
+          {this.resx.uI.dnnPlatformVersion}: &nbsp;
           <select name="dnnVersions" onInput={(event) => this.handleSelect(event)} id="dnnVersions" class="NormalTextBox">
             <option selected={true} value="<All Versions>">&lt;All Versions&gt;</option>
             <option value="091001" selected={this.selectValue === '091001'}>09.10.01</option>
