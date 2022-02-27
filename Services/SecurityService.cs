@@ -4,7 +4,10 @@
 using Dnn.Modules.SecurityCenter.ViewModels;
 using DotNetNuke.Common.Utilities;
 using System;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.ServiceModel.Syndication;
 using System.Threading.Tasks;
 using System.Xml;
@@ -19,14 +22,17 @@ namespace Dnn.Modules.SecurityCenter.Services
         /// <inheritdoc/>
         public async Task<SecurityBulletinsViewModel> GetAllSecurityBulletinsAsync(string versionString)
         {
-            return await Task.Run(() =>
+            return await Task.Run(async () =>
             {
-                var cacheKey = "Dnn.Security_SecurityBelletinsViewModel";
+                var cacheKey = $"Dnn.Security_SecurityBelletinsViewModel_{versionString}";
                 var cached = DataCache.GetCache<SecurityBulletinsViewModel>(cacheKey);
                 if (cached is null)
                 {
-                    XmlReader reader = XmlReader.Create($"https://dnnplatform.io/security.aspx?type=Framework&name=DNNCorp.CE&version={versionString}");
-                    var feed = SyndicationFeed.Load(reader);
+                    var client = new HttpClient();
+                    var response = await client.GetStringAsync($"https://dnnplatform.io/security.aspx?type=Framework&name=DNNCorp.CE&version={versionString}");
+                    var reader = XmlReader.Create(new StringReader(response));
+
+                    SyndicationFeed feed = SyndicationFeed.Load(reader);
 
                     var viewModel = new SecurityBulletinsViewModel
                     {
