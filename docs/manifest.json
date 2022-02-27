@@ -402,7 +402,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Dnn.Modules.SecurityCenter.ViewModels.LocalizationViewModel.UIInfo.html",
-          "hash": "qJV3vJb2PisF0+vi8KM68w=="
+          "hash": "dPQQSU79jbYRQGx+iGHqkw=="
         }
       },
       "is_incremental": false,
@@ -1736,11 +1736,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.additem.md",
+      "source_relative_path": "client/dnn-securitycenter.iuiinfo.dnnplatformversion.md",
       "output": {
         ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.additem.html",
-          "hash": "6FsQRkBtZTTBTVAwo+aqeQ=="
+          "relative_path": "client/dnn-securitycenter.iuiinfo.dnnplatformversion.html",
+          "hash": "KJXMzXRZBhsFMcNUW3w9lQ=="
         }
       },
       "is_incremental": false,
@@ -1748,83 +1748,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.cancel.md",
+      "source_relative_path": "client/dnn-securitycenter.iuiinfo.dnnsecuritycenter.md",
       "output": {
         ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.cancel.html",
-          "hash": "G8haV0v9mqohXWOWMM/zcA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.create.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.create.html",
-          "hash": "qJxIebxh6MUHr8boJoKeyw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.delete.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.delete.html",
-          "hash": "3YO3bKMu6X14TfR53aofQw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.deleteitemconfirm.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.deleteitemconfirm.html",
-          "hash": "+7TBU4UqdBBXEnk2FxnEPQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.description.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.description.html",
-          "hash": "nq4x/ycT/98comJDn82ggg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.edit.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.edit.html",
-          "hash": "OYhcmtxjMD6K0/7b4nXgXQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.loadmore.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.loadmore.html",
-          "hash": "cnvDV8K/C+wUtMHAscjM2g=="
+          "relative_path": "client/dnn-securitycenter.iuiinfo.dnnsecuritycenter.html",
+          "hash": "F/e5Nhwfkb0BmZvaT5Pjog=="
         }
       },
       "is_incremental": false,
@@ -1836,79 +1764,7 @@
       "output": {
         ".html": {
           "relative_path": "client/dnn-securitycenter.iuiinfo.html",
-          "hash": "BQGbPdTFkVXRKMypyoMRgQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.name.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.name.html",
-          "hash": "k0W2snWGaK+PE0znKhddEw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.no.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.no.html",
-          "hash": "EyJT7byxUbu7LIYcCn3NQA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.save.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.save.html",
-          "hash": "P0Kaj63yaIMZGAObjQrJlg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.searchplaceholder.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.searchplaceholder.html",
-          "hash": "bZs4vib+UsnZFznh0pAgNA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.shownitems.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.shownitems.html",
-          "hash": "+b76+1q69nEtuD0KEaVhIA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.iuiinfo.yes.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.iuiinfo.yes.html",
-          "hash": "QgV88sVkaYgdp99hmlgTeA=="
+          "hash": "StVnwK80X7TCKSpxU1x8HA=="
         }
       },
       "is_incremental": false,
@@ -2312,11 +2168,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.additem.md",
+      "source_relative_path": "client/dnn-securitycenter.uiinfo.dnnplatformversion.md",
       "output": {
         ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.additem.html",
-          "hash": "kZcHqGuINmcLRyIa/hyHsA=="
+          "relative_path": "client/dnn-securitycenter.uiinfo.dnnplatformversion.html",
+          "hash": "yBbmyF0pqzSQVbnByQSpeQ=="
         }
       },
       "is_incremental": false,
@@ -2324,71 +2180,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.cancel.md",
+      "source_relative_path": "client/dnn-securitycenter.uiinfo.dnnsecuritycenter.md",
       "output": {
         ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.cancel.html",
-          "hash": "B5wN9uWIRY3F3THXfd4fzg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.create.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.create.html",
-          "hash": "LcPqr6Eiajv4D58GioEY7w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.delete.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.delete.html",
-          "hash": "IeWwnSgeRYejH1tYQw/WeQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.deleteitemconfirm.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.deleteitemconfirm.html",
-          "hash": "rAAe7FOJP/le2eDOEWlMOQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.description.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.description.html",
-          "hash": "2uqaO87085ihBxXx+qQurQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.edit.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.edit.html",
-          "hash": "MBw2Nf03+nUCpxz1fhuqxg=="
+          "relative_path": "client/dnn-securitycenter.uiinfo.dnnsecuritycenter.html",
+          "hash": "R/FPrj4QRC3qvYdbDRqHaQ=="
         }
       },
       "is_incremental": false,
@@ -2420,83 +2216,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.loadmore.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.loadmore.html",
-          "hash": "iNtMz//LnwgVrs/LepeHhA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "client/dnn-securitycenter.uiinfo.md",
       "output": {
         ".html": {
           "relative_path": "client/dnn-securitycenter.uiinfo.html",
-          "hash": "bK0R5+uKPg50fauf6fTjCQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.name.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.name.html",
-          "hash": "KWyluA2uAXRMzr85Dphk7Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.no.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.no.html",
-          "hash": "x4pFnPMDZ5riyR12sRHaCg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.save.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.save.html",
-          "hash": "KwHYtxLUEA0tcsGw9QQIZw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.searchplaceholder.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.searchplaceholder.html",
-          "hash": "/8/cDi3H6NJKMKwIfYGo0A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.shownitems.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.shownitems.html",
-          "hash": "0nd8Eon8pGpJ3MLoK2n31w=="
+          "hash": "QslYwa1eXMsxYcuWrMUE3w=="
         }
       },
       "is_incremental": false,
@@ -2509,18 +2233,6 @@
         ".html": {
           "relative_path": "client/dnn-securitycenter.uiinfo.tojson.html",
           "hash": "gCa3AOtzk5a8N2jRQHpl2w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "client/dnn-securitycenter.uiinfo.yes.md",
-      "output": {
-        ".html": {
-          "relative_path": "client/dnn-securitycenter.uiinfo.yes.html",
-          "hash": "AH4K03PtxfNO+CfCVL9JdA=="
         }
       },
       "is_incremental": false,
@@ -2624,6 +2336,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "components/dnn-security-center.md",
+      "output": {
+        ".html": {
+          "relative_path": "components/dnn-security-center.html",
+          "hash": "QNmGRPXpF2ThfWQnyA3InQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "components/index.md",
       "output": {
         ".html": {
@@ -2635,87 +2359,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "components/my-component.md",
-      "output": {
-        ".html": {
-          "relative_path": "components/my-component.html",
-          "hash": "krEDAJFcKABPTxPrQstIAw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "components/my-create.md",
-      "output": {
-        ".html": {
-          "relative_path": "components/my-create.html",
-          "hash": "wpTHLTuvjstL01JKds0FcA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "components/my-edit.md",
-      "output": {
-        ".html": {
-          "relative_path": "components/my-edit.html",
-          "hash": "D8Xx/qirBmFQZGM9bzYzqw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "components/my-item-details.md",
-      "output": {
-        ".html": {
-          "relative_path": "components/my-item-details.html",
-          "hash": "TxBde2/w/2/BnEzLOZorgg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Conceptual",
-      "source_relative_path": "components/my-items-list.md",
-      "output": {
-        ".html": {
-          "relative_path": "components/my-items-list.html",
-          "hash": "38Wl21zBiEClGu/tSYh+UQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Toc",
       "source_relative_path": "components/toc.md",
       "output": {
         ".html": {
           "relative_path": "components/toc.html",
-          "hash": "cTtxrMM5YtDOIo1mlNjFkA=="
+          "hash": "A4UYZmyqvjx7OENBV74jqg=="
         }
       },
       "is_incremental": false,
@@ -2864,7 +2513,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 184,
+          "total_file_count": 156,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
