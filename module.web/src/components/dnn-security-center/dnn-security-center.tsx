@@ -1,5 +1,5 @@
 import { Component, h, Prop, Host, Element, State } from "@stencil/core";
-import { LocalizationClient, LocalizationViewModel } from "../../services/services";
+import { LocalizationClient, SecurityClient, LocalizationViewModel, SecurityBulletinsViewModel } from "../../services/services";
 import state, { localizationState } from "../../store/state";
 import alertError from "../../services/alert-error";
 
@@ -9,24 +9,28 @@ import alertError from "../../services/alert-error";
   shadow: true
 })
 export class DnnSecurityCenter {
-  private localizationService: LocalizationClient;
+  private localizationClient: LocalizationClient;
+  private securityClient: SecurityClient;
   private resx: LocalizationViewModel;
-
+  
   constructor() {
     state.moduleId = this.moduleId;
-    this.localizationService = new LocalizationClient({ moduleId: this.moduleId });
+    this.localizationClient = new LocalizationClient({ moduleId: this.moduleId });
+    this.securityClient = new SecurityClient({ moduleId: this.moduleId });
   }
-
+  
   @Element() el: HTMLDnnSecurityCenterElement;
 
   /** The Dnn module id, required in order to access web services. */
   @Prop() moduleId!: number;
 
-  @State() selectValue: string;
+  @State() selectValue: string = '090101';
+
+  @State() securityBulletins: SecurityBulletinsViewModel;
 
   componentWillLoad() {
-    const localizationPromise = new Promise<void>((resolve, reject) => {
-      this.localizationService.getLocalization()
+    return new Promise<void>((resolve, reject) => {
+      this.localizationClient.getLocalization()
         .then(l => {
           localizationState.viewModel = l;
           this.resx = localizationState.viewModel;
@@ -37,18 +41,28 @@ export class DnnSecurityCenter {
           reject();
         });
     });
-    
-    const rssPromise = new Promise<void>((resolve) => {
-      // TODO: Use a web service to get the RSS feed.
-      resolve();
-    });
+  }
 
-    return Promise.all([localizationPromise, rssPromise]);
+  componentDidLoad() {
+    this.getSecurityBulletins();
+  }
+
+  private getSecurityBulletins() {
+    this.securityClient.getSecurityBulletins(this.selectValue).then(data => {
+      this.securityBulletins = data;
+    }).catch(reason => {
+      alertError(reason);
+    });
   }
 
   private handleSelect(event): void {
-    console.log(event.target.value);
+    console.log(event.target.value + ' selected');
     this.selectValue = event.target.value;
+    this.getSecurityBulletins();
+  }
+
+  private decodeHtml(text: string): string {
+    return text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
   }
 
   render() {
@@ -213,6 +227,15 @@ export class DnnSecurityCenter {
             <option value="030100" selected={this.selectValue === '030100'}>03.01.00</option>
           </select>
         </div>
+        {this.securityBulletins?.bulletins?.map((bulletin) => {
+          return (
+            <div class="item">
+              <h2 class="item-title">{bulletin.title}</h2>
+              <h4 class="item-published">Published: {bulletin.publicationDateUtc.toLocaleDateString()}</h4>
+              <div class="item-description" innerHTML={this.decodeHtml(bulletin.description)}></div>
+            </div>
+          )
+        })}
         <div class="feed"></div>
       </div>
     </Host>;

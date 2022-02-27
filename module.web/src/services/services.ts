@@ -401,7 +401,7 @@ export class SecurityClient extends ClientBase {
      * @param versionString The version for which to get the security bulletins for in the format 090202 for v9.9.2.
      * @return A list of DNN security bulletins.
      */
-    getSecurityBulletins(versionString: string | null, signal?: AbortSignal | undefined): Promise<FileResponse | null> {
+    getSecurityBulletins(versionString: string | null, signal?: AbortSignal | undefined): Promise<SecurityBulletinsViewModel> {
         let url_ = this.baseUrl + "/Security/GetSecurityBulletins?";
         if (versionString === undefined)
             throw new Error("The parameter 'versionString' must be defined.");
@@ -424,20 +424,22 @@ export class SecurityClient extends ClientBase {
         });
     }
 
-    protected processGetSecurityBulletins(response: Response): Promise<FileResponse | null> {
+    protected processGetSecurityBulletins(response: Response): Promise<SecurityBulletinsViewModel> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200 || status === 206) {
-            const contentDisposition = response.headers ? response.headers.get("content-disposition") : undefined;
-            const fileNameMatch = contentDisposition ? /filename="?([^"]*?)"?(;|$)/g.exec(contentDisposition) : undefined;
-            const fileName = fileNameMatch && fileNameMatch.length > 1 ? fileNameMatch[1] : undefined;
-            return response.blob().then(blob => { return { fileName: fileName, data: blob, status: status, headers: _headers }; });
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = SecurityBulletinsViewModel.fromJS(resultData200);
+            return result200;
+            });
         } else if (status !== 200 && status !== 204) {
             return response.text().then((_responseText) => {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             });
         }
-        return Promise.resolve<FileResponse | null>(null as any);
+        return Promise.resolve<SecurityBulletinsViewModel>(null as any);
     }
 }
 
@@ -892,11 +894,128 @@ export interface IUIInfo {
     dnnSecurityCenter?: string | undefined;
 }
 
-export interface FileResponse {
-    data: Blob;
-    status: number;
-    fileName?: string;
-    headers?: { [name: string]: any };
+/** A viewmodel that represents DNN Security Bulletins. */
+export class SecurityBulletinsViewModel implements ISecurityBulletinsViewModel {
+    /** Gets or sets the title of the RSS feed. */
+    title?: string | undefined;
+    /** Gets or sets the url to download DNN Platform. */
+    link?: string | undefined;
+    /** Gets or sets the RSS feed description. */
+    description?: string | undefined;
+    /** Gets or sets the list of security bulletins. */
+    bulletins?: Bulletin[] | undefined;
+
+    constructor(data?: ISecurityBulletinsViewModel) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.title = _data["Title"];
+            this.link = _data["Link"];
+            this.description = _data["Description"];
+            if (Array.isArray(_data["Bulletins"])) {
+                this.bulletins = [] as any;
+                for (let item of _data["Bulletins"])
+                    this.bulletins!.push(Bulletin.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): SecurityBulletinsViewModel {
+        data = typeof data === 'object' ? data : {};
+        let result = new SecurityBulletinsViewModel();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["Title"] = this.title;
+        data["Link"] = this.link;
+        data["Description"] = this.description;
+        if (Array.isArray(this.bulletins)) {
+            data["Bulletins"] = [];
+            for (let item of this.bulletins)
+                data["Bulletins"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+/** A viewmodel that represents DNN Security Bulletins. */
+export interface ISecurityBulletinsViewModel {
+    /** Gets or sets the title of the RSS feed. */
+    title?: string | undefined;
+    /** Gets or sets the url to download DNN Platform. */
+    link?: string | undefined;
+    /** Gets or sets the RSS feed description. */
+    description?: string | undefined;
+    /** Gets or sets the list of security bulletins. */
+    bulletins?: Bulletin[] | undefined;
+}
+
+/** Represents a single DNN Security Bulletin. */
+export class Bulletin implements IBulletin {
+    /** Gets or sets a link to the detailed security bulletin. */
+    link?: string | undefined;
+    /** Gets or sets the title of the bulletin. */
+    title?: string | undefined;
+    /** Gets or sets the short description of the bulletin. */
+    description?: string | undefined;
+    /** Gets or sets a string representing the date of announcement. */
+    publicationDateUtc!: Date;
+
+    constructor(data?: IBulletin) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.link = _data["Link"];
+            this.title = _data["Title"];
+            this.description = _data["Description"];
+            this.publicationDateUtc = _data["PublicationDateUtc"] ? new Date(_data["PublicationDateUtc"].toString()) : <any>undefined;
+        }
+    }
+
+    static fromJS(data: any): Bulletin {
+        data = typeof data === 'object' ? data : {};
+        let result = new Bulletin();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["Link"] = this.link;
+        data["Title"] = this.title;
+        data["Description"] = this.description;
+        data["PublicationDateUtc"] = this.publicationDateUtc ? this.publicationDateUtc.toISOString() : <any>undefined;
+        return data;
+    }
+}
+
+/** Represents a single DNN Security Bulletin. */
+export interface IBulletin {
+    /** Gets or sets a link to the detailed security bulletin. */
+    link?: string | undefined;
+    /** Gets or sets the title of the bulletin. */
+    title?: string | undefined;
+    /** Gets or sets the short description of the bulletin. */
+    description?: string | undefined;
+    /** Gets or sets a string representing the date of announcement. */
+    publicationDateUtc: Date;
 }
 
 export class ApiException extends Error {

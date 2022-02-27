@@ -2,7 +2,9 @@
 // Copyright DNN Community
 
 using Dnn.Modules.SecurityCenter.Services;
+using Dnn.Modules.SecurityCenter.ViewModels;
 using DotNetNuke.Web.Api;
+using NSwag.Annotations;
 using System;
 using System.Threading.Tasks;
 using System.Web;
@@ -34,6 +36,7 @@ namespace Dnn.Modules.SecurityCenter.Controllers
         [ValidateAntiForgeryToken]
         [HttpGet]
         [DnnModuleAuthorize(AccessLevel = DotNetNuke.Security.SecurityAccessLevel.View)]
+        [SwaggerResponse(System.Net.HttpStatusCode.OK, typeof(SecurityBulletinsViewModel))]
         public async Task<IHttpActionResult> GetSecurityBulletins(string versionString)
         {
             try
