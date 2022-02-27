@@ -62,7 +62,7 @@ export class DnnSecurityCenter {
   }
 
   private decodeHtml(text: string): string {
-    return text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    return text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace('”', '').replace('”', '');
   }
 
   render() {
