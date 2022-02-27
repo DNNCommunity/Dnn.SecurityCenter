@@ -66,7 +66,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Dnn.Modules.SecurityCenter.Controllers.ModuleApiController.html",
-          "hash": "g0t2GjW0xjDTcef1bvpxHg=="
+          "hash": "e1syKzx/1wrj5B5CBCvaOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dnn.Modules.SecurityCenter.Controllers.SecurityController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dnn.Modules.SecurityCenter.Controllers.SecurityController.html",
+          "hash": "ncXzBXuWJssHrnkTlPTRbA=="
         }
       },
       "is_incremental": false,
@@ -90,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Dnn.Modules.SecurityCenter.Controllers.html",
-          "hash": "X9KFqYzn4Ylw9TZVqFdddQ=="
+          "hash": "ST8r5LbgNoEGWO+YaMsHyA=="
         }
       },
       "is_incremental": false,
@@ -290,6 +302,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Dnn.Modules.SecurityCenter.Services.ISecurityService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dnn.Modules.SecurityCenter.Services.ISecurityService.html",
+          "hash": "Q8X8DeyacY6hrgLqJvVebw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Dnn.Modules.SecurityCenter.Services.ItemService.yml",
       "output": {
         ".html": {
@@ -318,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Dnn.Modules.SecurityCenter.Services.html",
-          "hash": "V58aOPIKrWKC6ypRVr897w=="
+          "hash": "VXEUnB7HxrAARuUysa1Zdg=="
         }
       },
       "is_incremental": false,
@@ -398,11 +422,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Dnn.Modules.SecurityCenter.ViewModels.SecurityBulletinsViewModel.Bulletin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dnn.Modules.SecurityCenter.ViewModels.SecurityBulletinsViewModel.Bulletin.html",
+          "hash": "mOooONPL4MNsG/4le/EdFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dnn.Modules.SecurityCenter.ViewModels.SecurityBulletinsViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dnn.Modules.SecurityCenter.ViewModels.SecurityBulletinsViewModel.html",
+          "hash": "pISvoM6CBByQy7MQCOm4Xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Dnn.Modules.SecurityCenter.ViewModels.yml",
       "output": {
         ".html": {
           "relative_path": "api/Dnn.Modules.SecurityCenter.ViewModels.html",
-          "hash": "A9xuAM78vpYOysLhtMqC5w=="
+          "hash": "dcylSNhy2eubCxavMj1ljQ=="
         }
       },
       "is_incremental": false,
@@ -441,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "zvGOJg/qLwua4F3UAm8FxQ=="
+          "hash": "9iNCA+Cbb08D2ed7gITnYg=="
         }
       },
       "is_incremental": false,
@@ -937,6 +985,66 @@
         ".html": {
           "relative_path": "client/dnn-securitycenter.exception.tojson.html",
           "hash": "0gniAEUDRUnNRN74vmHBDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.fileresponse.data.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.fileresponse.data.html",
+          "hash": "6goH+JSJt3b8GeK50FUEKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.fileresponse.filename.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.fileresponse.filename.html",
+          "hash": "zgK6nabm/kBI+nflJj/wZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.fileresponse.headers.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.fileresponse.headers.html",
+          "hash": "XPo1BVtfazFqyRBK9BydxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.fileresponse.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.fileresponse.html",
+          "hash": "xe+nWIwRh7W6d2JZ1rYvTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.fileresponse.status.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.fileresponse.status.html",
+          "hash": "83PIPwkky9CoEVQdmYZY7g=="
         }
       },
       "is_incremental": false,
@@ -1980,7 +2088,7 @@
       "output": {
         ".html": {
           "relative_path": "client/dnn-securitycenter.html",
-          "hash": "ew0/4PbjBDyV7T7hDq7lHg=="
+          "hash": "FNCq7KS+CyGL2qb72Qditw=="
         }
       },
       "is_incremental": false,
@@ -2065,6 +2173,66 @@
         ".html": {
           "relative_path": "client/dnn-securitycenter.modelvalidationinfo.tojson.html",
           "hash": "Yj7sE8vryANAhzu8UDERpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securityclient._constructor_.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securityclient._constructor_.html",
+          "hash": "MaWB7H4t5g1v2uiW19ZUCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securityclient.getsecuritybulletins.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securityclient.getsecuritybulletins.html",
+          "hash": "Dokw4jN82cvNIR6+sOJ9ZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securityclient.jsonparsereviver.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securityclient.jsonparsereviver.html",
+          "hash": "5Uf7HzYsKwawoK6RPtNJrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securityclient.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securityclient.html",
+          "hash": "NVwKEwqycfUrQQprczwBcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "client/dnn-securitycenter.securityclient.processgetsecuritybulletins.md",
+      "output": {
+        ".html": {
+          "relative_path": "client/dnn-securitycenter.securityclient.processgetsecuritybulletins.html",
+          "hash": "g3OOarVCe1EVdu1Ch6R5Ng=="
         }
       },
       "is_incremental": false,
@@ -2448,7 +2616,7 @@
       "output": {
         ".html": {
           "relative_path": "client/toc.html",
-          "hash": "611v6h4PiUX7NZtA9FX7lg=="
+          "hash": "4I2KUbj32SYgEcy3AH11Iw=="
         }
       },
       "is_incremental": false,
@@ -2696,13 +2864,13 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 174,
+          "total_file_count": 184,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 34,
+          "total_file_count": 38,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

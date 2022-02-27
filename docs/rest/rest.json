@@ -225,6 +225,34 @@
           }
         }
       }
+    },
+    "/Security/GetSecurityBulletins": {
+      "get": {
+        "tags": [
+          "Security"
+        ],
+        "summary": "Gets all the DNN security bulletins.",
+        "operationId": "Security_GetSecurityBulletins",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "versionString",
+            "in": "query",
+            "required": true,
+            "description": "The version for which to get the security bulletins for in the format 090202 for v9.9.2.",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "A list of DNN security bulletins.",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
