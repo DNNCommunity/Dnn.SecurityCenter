@@ -47,61 +47,13 @@ namespace Dnn.Modules.SecurityCenter.ViewModels
         /// </summary>
         public class UIInfo
         {
-            /// <summary>Gets or sets the AddItem localized text.</summary>
-            /// <example>Add Item</example>
-            public string AddItem { get; set; }
+            /// <summary>Gets or sets the DnnPlatformVersion localized text.</summary>
+            /// <example>DNN Platform Version</example>
+            public string DnnPlatformVersion { get; set; }
 
-            /// <summary>Gets or sets the Cancel localized text.</summary>
-            /// <example>Cancel</example>
-            public string Cancel { get; set; }
-
-            /// <summary>Gets or sets the Create localized text.</summary>
-            /// <example>Create</example>
-            public string Create { get; set; }
-
-            /// <summary>Gets or sets the Delete localized text.</summary>
-            /// <example>Delete</example>
-            public string Delete { get; set; }
-
-            /// <summary>Gets or sets the DeleteItemConfirm localized text.</summary>
-            /// <example>Are you sure you want to delete this item?</example>
-            public string DeleteItemConfirm { get; set; }
-
-            /// <summary>Gets or sets the Description localized text.</summary>
-            /// <example>Description</example>
-            public string Description { get; set; }
-
-            /// <summary>Gets or sets the Edit localized text.</summary>
-            /// <example>Edit</example>
-            public string Edit { get; set; }
-
-            /// <summary>Gets or sets the LoadMore localized text.</summary>
-            /// <example>Load More</example>
-            public string LoadMore { get; set; }
-
-            /// <summary>Gets or sets the Name localized text.</summary>
-            /// <example>Name</example>
-            public string Name { get; set; }
-
-            /// <summary>Gets or sets the No localized text.</summary>
-            /// <example>No</example>
-            public string No { get; set; }
-
-            /// <summary>Gets or sets the Save localized text.</summary>
-            /// <example>Save</example>
-            public string Save { get; set; }
-
-            /// <summary>Gets or sets the SearchPlaceholder localized text.</summary>
-            /// <example>Search</example>
-            public string SearchPlaceholder { get; set; }
-
-            /// <summary>Gets or sets the ShownItems localized text.</summary>
-            /// <example>Showing {0} of {1} items.</example>
-            public string ShownItems { get; set; }
-
-            /// <summary>Gets or sets the Yes localized text.</summary>
-            /// <example>Yes</example>
-            public string Yes { get; set; }
+            /// <summary>Gets or sets the DnnSecurityCenter localized text.</summary>
+            /// <example>DNN Security Center</example>
+            public string DnnSecurityCenter { get; set; }
 
 
         }

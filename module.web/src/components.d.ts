@@ -5,138 +5,41 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IItemViewModel } from "./services/services";
 export namespace Components {
-    interface MyComponent {
+    interface DnnSecurityCenter {
         /**
           * The Dnn module id, required in order to access web services.
          */
         "moduleId": number;
-    }
-    interface MyCreate {
-    }
-    interface MyEdit {
-        /**
-          * The item to create or edit.
-         */
-        "item": IItemViewModel;
-        /**
-          * Resets the form to insert a new item.
-         */
-        "resetForm": () => Promise<void>;
-        /**
-          * Sets focus on the first form element
-         */
-        "setFocus": () => Promise<void>;
-    }
-    interface MyItemDetails {
-        /**
-          * The item to display
-         */
-        "item": IItemViewModel;
-    }
-    interface MyItemsList {
-        /**
-          * Defines how many items to fetch per request.
-         */
-        "pageSize": number;
-        /**
-          * Defines how many pixels under the fold to preload.
-         */
-        "preloadPixels": number;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLDnnSecurityCenterElement extends Components.DnnSecurityCenter, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLMyCreateElement extends Components.MyCreate, HTMLStencilElement {
-    }
-    var HTMLMyCreateElement: {
-        prototype: HTMLMyCreateElement;
-        new (): HTMLMyCreateElement;
-    };
-    interface HTMLMyEditElement extends Components.MyEdit, HTMLStencilElement {
-    }
-    var HTMLMyEditElement: {
-        prototype: HTMLMyEditElement;
-        new (): HTMLMyEditElement;
-    };
-    interface HTMLMyItemDetailsElement extends Components.MyItemDetails, HTMLStencilElement {
-    }
-    var HTMLMyItemDetailsElement: {
-        prototype: HTMLMyItemDetailsElement;
-        new (): HTMLMyItemDetailsElement;
-    };
-    interface HTMLMyItemsListElement extends Components.MyItemsList, HTMLStencilElement {
-    }
-    var HTMLMyItemsListElement: {
-        prototype: HTMLMyItemsListElement;
-        new (): HTMLMyItemsListElement;
+    var HTMLDnnSecurityCenterElement: {
+        prototype: HTMLDnnSecurityCenterElement;
+        new (): HTMLDnnSecurityCenterElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
-        "my-create": HTMLMyCreateElement;
-        "my-edit": HTMLMyEditElement;
-        "my-item-details": HTMLMyItemDetailsElement;
-        "my-items-list": HTMLMyItemsListElement;
+        "dnn-security-center": HTMLDnnSecurityCenterElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface DnnSecurityCenter {
         /**
           * The Dnn module id, required in order to access web services.
          */
         "moduleId": number;
     }
-    interface MyCreate {
-    }
-    interface MyEdit {
-        /**
-          * The item to create or edit.
-         */
-        "item"?: IItemViewModel;
-        /**
-          * Fires up when an item got created.
-         */
-        "onItemCreated"?: (event: CustomEvent<any>) => void;
-    }
-    interface MyItemDetails {
-        /**
-          * The item to display
-         */
-        "item": IItemViewModel;
-    }
-    interface MyItemsList {
-        /**
-          * Defines how many items to fetch per request.
-         */
-        "pageSize"?: number;
-        /**
-          * Defines how many pixels under the fold to preload.
-         */
-        "preloadPixels"?: number;
-    }
     interface IntrinsicElements {
-        "my-component": MyComponent;
-        "my-create": MyCreate;
-        "my-edit": MyEdit;
-        "my-item-details": MyItemDetails;
-        "my-items-list": MyItemsList;
+        "dnn-security-center": DnnSecurityCenter;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "my-create": LocalJSX.MyCreate & JSXBase.HTMLAttributes<HTMLMyCreateElement>;
-            "my-edit": LocalJSX.MyEdit & JSXBase.HTMLAttributes<HTMLMyEditElement>;
-            "my-item-details": LocalJSX.MyItemDetails & JSXBase.HTMLAttributes<HTMLMyItemDetailsElement>;
-            "my-items-list": LocalJSX.MyItemsList & JSXBase.HTMLAttributes<HTMLMyItemsListElement>;
+            "dnn-security-center": LocalJSX.DnnSecurityCenter & JSXBase.HTMLAttributes<HTMLDnnSecurityCenterElement>;
         }
     }
 }
