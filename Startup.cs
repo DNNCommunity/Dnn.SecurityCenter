@@ -29,6 +29,7 @@ namespace Dnn.Modules.SecurityCenter
             services.AddScoped<IItemService>(provider => new ItemService(provider.GetService<IRepository<Item>>()));
             services.AddScoped<ILoggingService, LoggingService>();
             services.AddScoped<ILocalizationService, LocalizationService>();
+            services.AddSingleton<ISecurityService, SecurityService>();
         }
     }
 }
