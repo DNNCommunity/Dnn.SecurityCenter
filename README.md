@@ -11,4 +11,4 @@ Built by Daniel Valadas @valadas
 
 If you like this template consider sponsoring at (https://github.com/sponsors/valadas)
 
-[Documentation](https://david-poindexter.github.io/Dnn.SecurityCenter/index.html)
+[Documentation](https://DNNCommunity.github.io/Dnn.SecurityCenter/index.html)
