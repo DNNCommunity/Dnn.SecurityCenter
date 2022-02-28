@@ -1067,7 +1067,7 @@
   "components/dnn-security-center.html": {
     "href": "components/dnn-security-center.html",
     "title": "my-component",
-    "keywords": "my-component Root component that does all the module rendering. <!-- Auto Generated Below --> Properties Property Attribute Description Type Default moduleId (required) module-id The Dnn module id, required in order to access web services. number undefined Built with StencilJS"
+    "keywords": "my-component Root component that does all the module rendering. <!-- Auto Generated Below --> Properties Property Attribute Description Type Default moduleId (required) module-id The Dnn module id, required in order to access web services. number undefined Dependencies Depends on dnn-chevron dnn-collapsible Graph graph TD; dnn-security-center --> dnn-chevron dnn-security-center --> dnn-collapsible style dnn-security-center fill:#f9f,stroke:#333,stroke-width:4px Built with StencilJS"
   },
   "components/index.html": {
     "href": "components/index.html",
