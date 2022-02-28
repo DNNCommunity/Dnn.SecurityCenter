@@ -58,7 +58,6 @@ export class DnnSecurityCenter {
   }
 
   private handleSelect(event): void {
-    console.log(event.target.value + ' selected');
     this.selectValue = event.target.value;
     if (this.selectValue === 'All Versions') {
       window.location.reload();
@@ -72,9 +71,8 @@ export class DnnSecurityCenter {
   }
 
   @Debounce(200)
-  private toggleCollapse(event: any, index: number): void {
+  private toggleCollapse(event: CustomEvent, index: number): void {
     const el = this.el.shadowRoot.querySelector(`#dnn-chevron-${index}`);
-    console.log(el, index);
     requestAnimationFrame(() => {
 
       if (this.expandedBulletinIndex === index) {
@@ -94,7 +92,7 @@ export class DnnSecurityCenter {
         <h1>{this.resx.uI.dnnSecurityCenter}</h1>
         <h3>
           {this.resx.uI.dnnPlatformVersion}: &nbsp;
-          <select name="dnnVersions" onInput={(e: any) => this.handleSelect(e)}>
+          <select name="dnnVersions" onInput={e => this.handleSelect(e)}>
             {dnnVersions.map(version => 
               <option value={version.replace(/\./g, '')}>{version}</option>
             )}
@@ -106,8 +104,7 @@ export class DnnSecurityCenter {
               <div class="collapse-row">
                 <div class="collapse-title">
                   <dnn-chevron id={'dnn-chevron-' + index} 
-                    onChanged={(e) => {
-                      console.log(e);
+                    onChanged={e => {
                       this.toggleCollapse(e, index);
                     }}
                     expanded={this.expandedBulletinIndex === index}
