@@ -12,6 +12,21 @@ Root component that does all the module rendering.
 | `moduleId` _(required)_ | `module-id` | The Dnn module id, required in order to access web services. | `number` | `undefined` |
 
 
+## Dependencies
+
+### Depends on
+
+- dnn-chevron
+- dnn-collapsible
+
+### Graph
+```mermaid
+graph TD;
+  dnn-security-center --> dnn-chevron
+  dnn-security-center --> dnn-collapsible
+  style dnn-security-center fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
