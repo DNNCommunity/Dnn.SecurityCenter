@@ -19,8 +19,10 @@ name: Build
 on:
   push:
     branches:
+      - main
       - master
       - develop
+      - development
       - 'release/*'
 
 jobs:

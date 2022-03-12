@@ -1,0 +1,43 @@
+:host {
+  display: block;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  select {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 0px;
+    padding: 10px;
+    font-size: large;
+  }
+
+  .collapse-row{
+    background-color: whitesmoke;
+    border: 0px solid grey;
+    border-radius: 10px;
+    margin: 1em 0;
+  }
+  .collapse-row .collapse-title{
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .collapse-title h2{
+    justify-self: start;
+    width: 100%;
+  }
+  .collapse-title h4{
+    justify-self: end;
+    width: min-content;
+  }
+  .collapse-row .collapse-title>*{
+    margin: 10px;
+  }
+  .collapsible-slot-content{
+    margin: 10px;
+  }
+}

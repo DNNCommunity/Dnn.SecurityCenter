@@ -1,6 +1,6 @@
 {
   "name": "dnn-securitycenter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -24,7 +24,7 @@
     "tsdoc": "tsc -d --emitDeclarationOnly ./src/services/services.ts && api-extractor run --local && api-documenter markdown -i temp -o tempmd"
   },
   "devDependencies": {
-    "@eraware/dnn-elements": "^0.11.0",
+    "@dnncommunity/dnn-elements": "^0.14.0",
     "@microsoft/api-documenter": "^7.13.49",
     "@microsoft/api-extractor": "^7.18.9",
     "@stencil/core": "^2.3.0",
