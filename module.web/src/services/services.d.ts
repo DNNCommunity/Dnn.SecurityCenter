@@ -64,6 +64,21 @@ export declare class LocalizationClient extends ClientBase {
     getLocalization(signal?: AbortSignal | undefined): Promise<LocalizationViewModel>;
     protected processGetLocalization(response: Response): Promise<LocalizationViewModel>;
 }
+export declare class SecurityClient extends ClientBase {
+    private http;
+    private baseUrl;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined;
+    constructor(configuration: ConfigureRequest, baseUrl?: string, http?: {
+        fetch(url: RequestInfo, init?: RequestInit): Promise<Response>;
+    });
+    /**
+     * Gets all the DNN security bulletins.
+     * @param versionString The version for which to get the security bulletins for in the format 090202 for v9.9.2.
+     * @return A list of DNN security bulletins.
+     */
+    getSecurityBulletins(versionString: string | null, signal?: AbortSignal | undefined): Promise<SecurityBulletinsViewModel>;
+    protected processGetSecurityBulletins(response: Response): Promise<SecurityBulletinsViewModel>;
+}
 /** Represents the basic information about an item. */
 export declare class ItemViewModel implements IItemViewModel {
     /** Gets or sets the id of the item. */
@@ -218,34 +233,10 @@ export interface IModelValidationInfo {
 }
 /** Localized strings for the UI resources. */
 export declare class UIInfo implements IUIInfo {
-    /** Gets or sets the AddItem localized text. */
-    addItem?: string | undefined;
-    /** Gets or sets the Cancel localized text. */
-    cancel?: string | undefined;
-    /** Gets or sets the Create localized text. */
-    create?: string | undefined;
-    /** Gets or sets the Delete localized text. */
-    delete?: string | undefined;
-    /** Gets or sets the DeleteItemConfirm localized text. */
-    deleteItemConfirm?: string | undefined;
-    /** Gets or sets the Description localized text. */
-    description?: string | undefined;
-    /** Gets or sets the Edit localized text. */
-    edit?: string | undefined;
-    /** Gets or sets the LoadMore localized text. */
-    loadMore?: string | undefined;
-    /** Gets or sets the Name localized text. */
-    name?: string | undefined;
-    /** Gets or sets the No localized text. */
-    no?: string | undefined;
-    /** Gets or sets the Save localized text. */
-    save?: string | undefined;
-    /** Gets or sets the SearchPlaceholder localized text. */
-    searchPlaceholder?: string | undefined;
-    /** Gets or sets the ShownItems localized text. */
-    shownItems?: string | undefined;
-    /** Gets or sets the Yes localized text. */
-    yes?: string | undefined;
+    /** Gets or sets the DnnPlatformVersion localized text. */
+    dnnPlatformVersion?: string | undefined;
+    /** Gets or sets the DnnSecurityCenter localized text. */
+    dnnSecurityCenter?: string | undefined;
     constructor(data?: IUIInfo);
     init(_data?: any): void;
     static fromJS(data: any): UIInfo;
@@ -253,34 +244,62 @@ export declare class UIInfo implements IUIInfo {
 }
 /** Localized strings for the UI resources. */
 export interface IUIInfo {
-    /** Gets or sets the AddItem localized text. */
-    addItem?: string | undefined;
-    /** Gets or sets the Cancel localized text. */
-    cancel?: string | undefined;
-    /** Gets or sets the Create localized text. */
-    create?: string | undefined;
-    /** Gets or sets the Delete localized text. */
-    delete?: string | undefined;
-    /** Gets or sets the DeleteItemConfirm localized text. */
-    deleteItemConfirm?: string | undefined;
-    /** Gets or sets the Description localized text. */
+    /** Gets or sets the DnnPlatformVersion localized text. */
+    dnnPlatformVersion?: string | undefined;
+    /** Gets or sets the DnnSecurityCenter localized text. */
+    dnnSecurityCenter?: string | undefined;
+}
+/** A viewmodel that represents DNN Security Bulletins. */
+export declare class SecurityBulletinsViewModel implements ISecurityBulletinsViewModel {
+    /** Gets or sets the title of the RSS feed. */
+    title?: string | undefined;
+    /** Gets or sets the url to download DNN Platform. */
+    link?: string | undefined;
+    /** Gets or sets the RSS feed description. */
     description?: string | undefined;
-    /** Gets or sets the Edit localized text. */
-    edit?: string | undefined;
-    /** Gets or sets the LoadMore localized text. */
-    loadMore?: string | undefined;
-    /** Gets or sets the Name localized text. */
-    name?: string | undefined;
-    /** Gets or sets the No localized text. */
-    no?: string | undefined;
-    /** Gets or sets the Save localized text. */
-    save?: string | undefined;
-    /** Gets or sets the SearchPlaceholder localized text. */
-    searchPlaceholder?: string | undefined;
-    /** Gets or sets the ShownItems localized text. */
-    shownItems?: string | undefined;
-    /** Gets or sets the Yes localized text. */
-    yes?: string | undefined;
+    /** Gets or sets the list of security bulletins. */
+    bulletins?: Bulletin[] | undefined;
+    constructor(data?: ISecurityBulletinsViewModel);
+    init(_data?: any): void;
+    static fromJS(data: any): SecurityBulletinsViewModel;
+    toJSON(data?: any): any;
+}
+/** A viewmodel that represents DNN Security Bulletins. */
+export interface ISecurityBulletinsViewModel {
+    /** Gets or sets the title of the RSS feed. */
+    title?: string | undefined;
+    /** Gets or sets the url to download DNN Platform. */
+    link?: string | undefined;
+    /** Gets or sets the RSS feed description. */
+    description?: string | undefined;
+    /** Gets or sets the list of security bulletins. */
+    bulletins?: Bulletin[] | undefined;
+}
+/** Represents a single DNN Security Bulletin. */
+export declare class Bulletin implements IBulletin {
+    /** Gets or sets a link to the detailed security bulletin. */
+    link?: string | undefined;
+    /** Gets or sets the title of the bulletin. */
+    title?: string | undefined;
+    /** Gets or sets the short description of the bulletin. */
+    description?: string | undefined;
+    /** Gets or sets a string representing the date of announcement. */
+    publicationDateUtc: Date;
+    constructor(data?: IBulletin);
+    init(_data?: any): void;
+    static fromJS(data: any): Bulletin;
+    toJSON(data?: any): any;
+}
+/** Represents a single DNN Security Bulletin. */
+export interface IBulletin {
+    /** Gets or sets a link to the detailed security bulletin. */
+    link?: string | undefined;
+    /** Gets or sets the title of the bulletin. */
+    title?: string | undefined;
+    /** Gets or sets the short description of the bulletin. */
+    description?: string | undefined;
+    /** Gets or sets a string representing the date of announcement. */
+    publicationDateUtc: Date;
 }
 export declare class ApiException extends Error {
     message: string;
