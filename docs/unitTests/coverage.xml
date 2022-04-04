@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.8590000000000001" branch-rate="0.96" version="1.9" timestamp="1647052626" lines-covered="329" lines-valid="383" branches-covered="48" branches-valid="50">
+<coverage line-rate="0.8590000000000001" branch-rate="0.96" version="1.9" timestamp="1649037223" lines-covered="329" lines-valid="383" branches-covered="48" branches-valid="50">
   <sources>
     <source>D:\a\Dnn.SecurityCenter\Dnn.SecurityCenter\</source>
   </sources>

@@ -423,7 +423,7 @@ internal class Build : NukeBuild
         .Executes(() =>
         {
             Serilog.Log.Information($"We are on branch {GitRepository.Branch}");
-            if (GitRepository.IsOnMainOrMasterBranch())
+            if (GitRepository.IsOnMainOrMasterBranch() || GitRepository.IsOnReleaseBranch())
             {
                 gitHubClient = new GitHubClient(new ProductHeaderValue("Nuke"));
                 var tokenAuth = new Credentials(GitHubToken);
@@ -768,6 +768,7 @@ internal class Build : NukeBuild
         });
 
     Target DeployGeneratedFiles => _ => _
+        .OnlyWhenDynamic(() => GitRepository.IsOnDevelopBranch())
         .DependsOn(Docs)
         .DependsOn(Test)
         .Executes(() =>
@@ -790,6 +791,8 @@ internal class Build : NukeBuild
                 Git("status");
                 Git("commit --allow-empty -m \"Commit latest generated files\""); // We allow an empty commit in case the last change did not affect the site.
                 Git("status");
+                Git("fetch origin");
+                Git($"pull origin {GitRepository.Branch}");
                 Git($"push --set-upstream origin {GitRepository.Branch}");
             }
         });
