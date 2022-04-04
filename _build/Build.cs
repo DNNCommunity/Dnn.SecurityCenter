@@ -423,7 +423,7 @@ internal class Build : NukeBuild
         .Executes(() =>
         {
             Serilog.Log.Information($"We are on branch {GitRepository.Branch}");
-            if (GitRepository.IsOnMainOrMasterBranch())
+            if (GitRepository.IsOnMainOrMasterBranch() || GitRepository.IsOnReleaseBranch())
             {
                 gitHubClient = new GitHubClient(new ProductHeaderValue("Nuke"));
                 var tokenAuth = new Credentials(GitHubToken);
