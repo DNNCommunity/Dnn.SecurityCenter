@@ -768,6 +768,7 @@ internal class Build : NukeBuild
         });
 
     Target DeployGeneratedFiles => _ => _
+        .OnlyWhenDynamic(() => GitRepository.IsOnDevelopBranch())
         .DependsOn(Docs)
         .DependsOn(Test)
         .Executes(() =>
