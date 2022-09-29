@@ -1,6 +1,6 @@
 {
   "name": "dnn-securitycenter",
-  "version": "0.2.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -20,13 +20,10 @@
     "start": "stencil build --dev --watch --serve --no-open",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate",
-    "tsdoc": "tsc -d --emitDeclarationOnly ./src/services/services.ts && api-extractor run --local && api-documenter markdown -i temp -o tempmd"
+    "generate": "stencil generate"
   },
   "devDependencies": {
     "@dnncommunity/dnn-elements": "^0.15.0",
-    "@microsoft/api-documenter": "^7.17.0",
-    "@microsoft/api-extractor": "^7.20.0",
     "@stencil/core": "^2.15.0",
     "@stencil/eslint-plugin": "^0.4.0",
     "@stencil/sass": "^1.1.1",
