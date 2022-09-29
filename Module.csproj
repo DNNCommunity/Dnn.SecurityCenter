@@ -85,6 +85,7 @@
     <Compile Include="ViewModels\ItemsPageViewModel.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\LocalizationViewModel.cs" />
+    <Compile Include="ViewModels\SecurityBulletinsReportViewModel.cs" />
     <Compile Include="ViewModels\SecurityBulletinsViewModel.cs" />
     <Resource Include=".gitignore" />
     <Resource Include="resources\images\module-icon.png" />

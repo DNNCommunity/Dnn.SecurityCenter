@@ -3,7 +3,9 @@
 
 using Dnn.Modules.SecurityCenter.ViewModels;
 using DotNetNuke.Common.Utilities;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -28,28 +30,30 @@ namespace Dnn.Modules.SecurityCenter.Services
                 var cached = DataCache.GetCache<SecurityBulletinsViewModel>(cacheKey);
                 if (cached is null)
                 {
-                    var client = new HttpClient();
-                    var response = await client.GetStringAsync($"https://dnnplatform.io/security.aspx?type=Framework&name=DNNCorp.CE&version={versionString}");
-                    var reader = XmlReader.Create(new StringReader(response));
-
-                    SyndicationFeed feed = SyndicationFeed.Load(reader);
-
-                    var viewModel = new SecurityBulletinsViewModel
+                    using (var client = new HttpClient())
                     {
-                        Bulletins = feed.Items.Select(item => new SecurityBulletinsViewModel.Bulletin
+                        var response = await client.GetAsync($"https://dnnplatform.io/security/vulnerabilitiesjson/{versionString}");
+                        response.EnsureSuccessStatusCode();
+                        var bulletinsString = await response.Content.ReadAsStringAsync();
+                        var bulletins = new SecurityBulletinsReportViewModel
                         {
-                            Description = item.Summary.Text,
-                            Link = item.Links.FirstOrDefault().Uri.ToString(),
-                            PublicationDateUtc = item.PublishDate.UtcDateTime,
-                            Title = item.Title.Text,
-                        }),
-                        Description = feed.Description.Text,
-                        Link = feed.Links.FirstOrDefault().Uri.ToString(),
-                        Title = feed.Title.Text,
-                    };
+                            SecurityBulletins = JsonConvert.DeserializeObject<List<SecurityBulletinsReportViewModel.SecurityBulletinInfo>>(bulletinsString),
+                        };
 
-                    DataCache.SetCache(cacheKey, viewModel, DateTime.Now.AddHours(1));
-                    return viewModel;
+                        var viewModel = new SecurityBulletinsViewModel
+                        {
+                            Bulletins = bulletins.SecurityBulletins.Select(b => new SecurityBulletinsViewModel.Bulletin
+                            {
+                                Description = b.Description,
+                                Link = b.DetailUrl.ToString(),
+                                PublicationDateUtc = b.CreateDate,
+                                Title = b.Title,
+                            }),
+                        };
+
+                        DataCache.SetCache(cacheKey, viewModel, DateTime.Now.AddHours(1));
+                        return viewModel;
+                    }
                 }
 
                 return cached;
