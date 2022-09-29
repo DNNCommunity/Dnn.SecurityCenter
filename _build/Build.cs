@@ -38,8 +38,6 @@ using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
 using static Nuke.Common.Tools.Npm.NpmTasks;
 using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
 
-// Not using AutoGenerate here because of https://github.com/nuke-build/nuke/issues/857
-// Not using EnableGitHubContext here because of https://github.com/nuke-build/nuke/issues/858 and/or https://github.com/actions/runner/issues/1647
 [GitHubActions(
     "Release",
     GitHubActionsImage.UbuntuLatest,
@@ -84,16 +82,13 @@ internal class Build : NukeBuild
 
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
     AbsolutePath InstallDirectory => RootDirectory.Parent.Parent / "Install" / "Module";
-    AbsolutePath WebProjectDirectory => RootDirectory / "Module.Web";
+    AbsolutePath WebProjectDirectory => RootDirectory / "module.web";
     AbsolutePath TestResultsDirectory => RootDirectory / "TestResults";
     AbsolutePath UnitTestsResultsDirectory => TestResultsDirectory / "UnitTests";
-    AbsolutePath IntegrationTestsResultsDirectory => TestResultsDirectory / "IntegrationTests";
     AbsolutePath GithubDirectory => RootDirectory / ".github";
     AbsolutePath BadgesDirectory => GithubDirectory / "badges";
     AbsolutePath UnitTestBadgesDirectory => BadgesDirectory / "UnitTests";
-    AbsolutePath IntegrationTestsBadgesDirectory => BadgesDirectory / "IntegrationTests";
     AbsolutePath ClientServicesDirectory => WebProjectDirectory / "src" / "services";
-    AbsolutePath DocFxProjectDirectory => RootDirectory / "docfx_project";
     AbsolutePath DocsDirectory => RootDirectory / "docs";
 
     private const string devViewsPath = "http://localhost:3333/build/";
@@ -138,7 +133,6 @@ internal class Build : NukeBuild
             EnsureCleanDirectory(ArtifactsDirectory);
             EnsureCleanDirectory(TestResultsDirectory);
             EnsureCleanDirectory(UnitTestsResultsDirectory);
-            EnsureCleanDirectory(IntegrationTestsResultsDirectory);
         });
 
     Target Restore => _ => _
