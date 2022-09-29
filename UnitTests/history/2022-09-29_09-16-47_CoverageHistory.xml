@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2022-09-29_09-16-47" tag="">
+  <assembly name="Dnn.Modules.SecurityCenter">
+    <class name="Dnn.Modules.SecurityCenter.Common.Extensions.IQueryableExtensions" coveredlines="6" coverablelines="6" totallines="33" coveredbranches="2" totalbranches="2" coveredcodeelements="1" totalcodeelements="1" />
+    <class name="Dnn.Modules.SecurityCenter.Controllers.LocalizationController" coveredlines="7" coverablelines="7" totallines="43" coveredbranches="0" totalbranches="0" coveredcodeelements="2" totalcodeelements="2" />
+    <class name="Dnn.Modules.SecurityCenter.Controllers.ModuleApiController" coveredlines="8" coverablelines="8" totallines="48" coveredbranches="0" totalbranches="0" coveredcodeelements="2" totalcodeelements="2" />
+    <class name="Dnn.Modules.SecurityCenter.Controllers.ModuleExceptionFilterAttribute" coveredlines="45" coverablelines="45" totallines="81" coveredbranches="10" totalbranches="10" coveredcodeelements="1" totalcodeelements="1" />
+    <class name="Dnn.Modules.SecurityCenter.Controllers.SecurityController" coveredlines="0" coverablelines="12" totallines="54" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="2" />
+    <class name="Dnn.Modules.SecurityCenter.Controllers.ServiceRouteMapper" coveredlines="3" coverablelines="3" totallines="19" coveredbranches="2" totalbranches="2" coveredcodeelements="1" totalcodeelements="1" />
+    <class name="Dnn.Modules.SecurityCenter.Controllers.ValidateModelAttribute" coveredlines="29" coverablelines="29" totallines="64" coveredbranches="10" totalbranches="10" coveredcodeelements="2" totalcodeelements="2" />
+    <class name="Dnn.Modules.SecurityCenter.DTO.CreateItemDTO" coveredlines="0" coverablelines="2" totallines="24" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="2" />
+    <class name="Dnn.Modules.SecurityCenter.DTO.GetItemsPageDTO" coveredlines="0" coverablelines="4" totallines="30" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="4" />
+    <class name="Dnn.Modules.SecurityCenter.DTO.UpdateItemDTO" coveredlines="0" coverablelines="1" totallines="19" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Dnn.Modules.SecurityCenter.Services.LoggingService" coveredlines="31" coverablelines="31" totallines="71" coveredbranches="2" totalbranches="2" coveredcodeelements="7" totalcodeelements="7" />
+    <class name="Dnn.Modules.SecurityCenter.Services.SecurityService" coveredlines="0" coverablelines="36" totallines="63" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="2" />
+    <class name="Dnn.Modules.SecurityCenter.ViewModels.SecurityBulletinsReportViewModel" coveredlines="0" coverablelines="7" totallines="56" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="7" />
+    <class name="Dnn.Modules.SecurityCenter.ViewModels.SecurityBulletinsViewModel" coveredlines="0" coverablelines="8" totallines="60" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="8" />
+  </assembly>
+</coverage>
