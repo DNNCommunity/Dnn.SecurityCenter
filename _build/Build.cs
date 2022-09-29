@@ -153,9 +153,6 @@ internal class Build : NukeBuild
 
             DotNetRestore(s => s
                 .SetProjectFile(Solution.GetProject("UnitTests")));
-
-            DotNetRestore(s => s
-                .SetProjectFile(Solution.GetProject("IntegrationTests")));
         });
 
     Target UnitTests => _ => _
@@ -200,51 +197,8 @@ internal class Build : NukeBuild
             }
         });
 
-    Target IntegrationTests => _ => _
-        .DependsOn(Compile)
-        .Executes(() =>
-        {
-            MSBuild(_ => _
-                .SetConfiguration(Configuration.Debug)
-                .SetProjectFile(Solution.GetProject("IntegrationTests"))
-                .SetTargets("Build")
-                .ResetVerbosity());
-
-            DotNetTest(_ => _
-                .SetConfiguration(Configuration.Debug)
-                .ResetVerbosity()
-                .SetResultsDirectory(IntegrationTestsResultsDirectory)
-                .EnableCollectCoverage()
-                .SetCoverletOutputFormat(CoverletOutputFormat.cobertura)
-                .SetLoggers("trx;LogFileName=IntegrationTests.trx")
-                .SetCoverletOutput(IntegrationTestsResultsDirectory / "coverage.xml")
-                .SetProjectFile(RootDirectory / "IntegrationTests" / "IntegrationTests.csproj")
-                .SetNoBuild(true));
-
-            ReportGenerator(_ => _
-                .SetReports(IntegrationTestsResultsDirectory / "*.xml")
-                .SetReportTypes(ReportTypes.Badges, ReportTypes.HtmlInline, ReportTypes.HtmlChart)
-                .SetHistoryDirectory(RootDirectory / "IntegrationTests" / "history")
-                .SetTargetDirectory(IntegrationTestsResultsDirectory)
-                .AddClassFilters("-*Data.ModuleDbContext")
-                .SetProcessArgumentConfigurator(a => a
-                    .Add("-title:IntegrationTests"))
-                .SetFramework("net5.0"));
-
-            Helpers.CleanCodeCoverageHistoryFiles(RootDirectory / "IntegrationTests" / "history");
-
-            var testBadges = GlobFiles(IntegrationTestsResultsDirectory, "badge_branchcoverage.svg", "badge_linecoverage.svg");
-            testBadges.ForEach(f => CopyFileToDirectory(f, IntegrationTestsBadgesDirectory, FileExistsPolicy.Overwrite, true));
-
-            if (IsWin && (InvokedTargets.Contains(IntegrationTests) || InvokedTargets.Contains(Test)))
-            {
-                Process.Start(@"cmd.exe ", @"/c " + (IntegrationTestsResultsDirectory / "index.html"));
-            }
-        });
-
     Target Test => _ => _
         .DependsOn(UnitTests)
-        .DependsOn(IntegrationTests)
         .Executes(() =>
         {
         });
