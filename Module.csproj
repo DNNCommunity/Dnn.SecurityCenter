@@ -87,21 +87,6 @@
     <None Include=".editorconfig" />
     <None Include="App.config" />
     <AdditionalFiles Include="stylecop.json" />
-    <None Include="docfx_project\adjust-toc-namespaces.js" />
-    <None Include="docfx_project\articles\git.md" />
-    <None Include="docfx_project\articles\intro.md" />
-    <None Include="docfx_project\articles\project-architecture.md" />
-    <None Include="docfx_project\articles\toc.yml" />
-    <None Include="docfx_project\docfx.json" />
-    <None Include="docfx_project\index.md" />
-    <None Include="docfx_project\rest\rest-api.md" />
-    <None Include="docfx_project\rest\toc.yml" />
-    <None Include="docfx_project\templates\mytemplate\common.js" />
-    <None Include="docfx_project\templates\mytemplate\layout\_master.tmpl" />
-    <None Include="docfx_project\templates\mytemplate\partials\footer.tmpl.partial" />
-    <None Include="docfx_project\templates\mytemplate\partials\scripts.tmpl.partial" />
-    <None Include="docfx_project\toc.yml" />
-    <None Include="docfx_project\package.json" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
@@ -136,21 +121,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="docfx_project\.gitignore" />
-    <Content Include="docfx_project\images\create-beta-release.gif" />
-    <Content Include="docfx_project\images\create-develop-branch.gif" />
-    <Content Include="docfx_project\images\create-pull-request.gif" />
-    <Content Include="docfx_project\images\create-release.gif" />
-    <Content Include="docfx_project\images\initial-commit.gif" />
-    <Content Include="docfx_project\images\install-module.gif" />
-    <Content Include="docfx_project\images\Package.gif" />
-    <Content Include="docfx_project\templates\mytemplate\styles\main.css" />
-    <Content Include="docfx_project\templates\mytemplate\styles\main.js" />
-    <Content Include="docfx_project\templates\mytemplate\styles\mermaid.min.js" />
-    <Content Include="docfx_project\templates\mytemplate\styles\mermaid.min.js.map" />
-    <Content Include="docfx_project\templates\mytemplate\styles\toggle-theme.js" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="resources\App_LocalResources\ModelValidation.resx" />
