@@ -43,21 +43,24 @@ using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
     GitHubActionsImage.UbuntuLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPushBranches = new[] { "master", "main", "release/*" },
-    InvokedTargets = new[] { nameof(Release) }
+    InvokedTargets = new[] { nameof(Release) },
+    FetchDepth = 0
 )]
 [GitHubActions(
     "PR_Validation",
     GitHubActionsImage.UbuntuLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPullRequestBranches = new[] { "master", "main", "develop", "development", "release/*" },
-    InvokedTargets = new[] { nameof(Package) }
+    InvokedTargets = new[] { nameof(Package) },
+    FetchDepth = 0
 )]
 [GitHubActions(
     "Build",
     GitHubActionsImage.UbuntuLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPushBranches = new[] { "master", "develop", "release/*" },
-    InvokedTargets = new[] { nameof(DeployGeneratedFiles) }
+    InvokedTargets = new[] { nameof(DeployGeneratedFiles) },
+    FetchDepth = 0
     )]
 [UnsetVisualStudioEnvironmentVariables]
 internal class Build : NukeBuild
@@ -78,7 +81,7 @@ internal class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
-    [GitVersion(Framework = "net6.0", UpdateAssemblyInfo = false, NoFetch = true)] readonly GitVersion GitVersion;
+    [GitVersion] readonly GitVersion GitVersion;
 
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
     AbsolutePath InstallDirectory => RootDirectory.Parent.Parent / "Install" / "Module";
