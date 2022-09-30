@@ -1,6 +1,6 @@
 <dotnetnuke version="5.0" type="Package">
   <packages>
-    <package name="DNNCommunity_SecurityCenter" type="Module" version="01.01.00">
+    <package name="DNNCommunity_SecurityCenter" type="Module" version="01.02.00">
       <friendlyName>DNN Security Center</friendlyName>
       <description>DNN Security Center</description>
       <iconFile>~/DesktopModules/Dnn.SecurityCenter/resources/images/module-icon.png</iconFile>
@@ -23,16 +23,6 @@
             <assembly>
               <name>Dnn.Modules.SecurityCenter.dll</name>
               <path>bin</path>
-            </assembly>
-            <assembly>
-              <name>EntityFramework.dll</name>
-              <path>bin</path>
-              <version>6.4.4</version>
-            </assembly>
-            <assembly>
-              <name>EntityFramework.SqlServer.dll</name>
-              <path>bin</path>
-              <version>6.4.4</version>
             </assembly>
             <assembly>
               <name>NSwag.Annotations.dll</name>
@@ -65,7 +55,7 @@
             </moduleDefinitions>
           </desktopModule>
         </component>
-        <component type="Cleanup" version="01.01.00" glob="DesktopModules/Dnn.SecurityCenter/resources/**/*" />
+        <component type="Cleanup" version="01.02.00" glob="DesktopModules/Dnn.SecurityCenter/resources/**/*" />
         <component type="ResourceFile">
           <resourceFiles>
             <basePath>DesktopModules/Dnn.SecurityCenter/resources</basePath>
