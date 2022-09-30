@@ -19,14 +19,6 @@
     "Unit Tests": {
       "commandName": "Project",
       "commandLineArgs": "--target UnitTests --configuration Debug"
-    },
-    "Integration Tests": {
-      "commandName": "Project",
-      "commandLineArgs": "--target IntegrationTests --configuration Debug"
-    },
-    "Docs": {
-      "commandName": "Project",
-      "commandLineArgs": "--target Docs --configuration Debug"
     }
   }
 }

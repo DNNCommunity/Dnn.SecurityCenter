@@ -11,19 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NuGet.CommandLine" Version="6.0.0">
+    <PackageReference Include="NuGet.CommandLine" Version="6.2.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Nuke.Common" Version="6.0.1" />
-    <PackageReference Include="ReportGenerator" Version="5.1.4" />
+    <PackageReference Include="Nuke.Common" Version="6.2.1" />
+    <PackageReference Include="ReportGenerator" Version="5.1.10" />
     <PackageReference Include="xunit.runner.console" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="NSwag.MSBuild" Version="13.15.10" />
-    <PackageDownload Include="docfx.console" Version="[2.56.6]" />
-    <PackageDownload Include="GitVersion.Tool" Version="[5.8.1]" />
+    <PackageDownload Include="GitVersion.Tool" Version="[5.7.0]" />
     <PackageDownload Include="coverlet.console" Version="[1.7.2]" />
   </ItemGroup>
 

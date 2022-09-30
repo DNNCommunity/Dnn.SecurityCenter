@@ -7,7 +7,6 @@ using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.Coverlet;
-using Nuke.Common.Tools.DocFX;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitHub;
 using Nuke.Common.Tools.GitVersion;
@@ -39,31 +38,29 @@ using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
 using static Nuke.Common.Tools.Npm.NpmTasks;
 using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
 
-// Not using AutoGenerate here because of https://github.com/nuke-build/nuke/issues/857
-// Not using EnableGitHubContext here because of https://github.com/nuke-build/nuke/issues/858 and/or https://github.com/actions/runner/issues/1647
 [GitHubActions(
     "Release",
-    GitHubActionsImage.WindowsLatest,
-    AutoGenerate = false,
+    GitHubActionsImage.UbuntuLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPushBranches = new[] { "master", "main", "release/*" },
-    InvokedTargets = new[] { nameof(Release) }
+    InvokedTargets = new[] { nameof(Release) },
+    FetchDepth = 0
 )]
 [GitHubActions(
     "PR_Validation",
-    GitHubActionsImage.WindowsLatest,
-    AutoGenerate = false,
+    GitHubActionsImage.UbuntuLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPullRequestBranches = new[] { "master", "main", "develop", "development", "release/*" },
-    InvokedTargets = new[] { nameof(Package) }
+    InvokedTargets = new[] { nameof(Package) },
+    FetchDepth = 0
 )]
 [GitHubActions(
     "Build",
-    GitHubActionsImage.WindowsLatest,
-    AutoGenerate = false,
+    GitHubActionsImage.UbuntuLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPushBranches = new[] { "master", "develop", "release/*" },
-    InvokedTargets = new[] { nameof(DeployGeneratedFiles) }
+    InvokedTargets = new[] { nameof(DeployGeneratedFiles) },
+    FetchDepth = 0
     )]
 [UnsetVisualStudioEnvironmentVariables]
 internal class Build : NukeBuild
@@ -84,20 +81,17 @@ internal class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
-    [GitVersion(Framework = "net6.0", UpdateAssemblyInfo = false, NoFetch = true)] readonly GitVersion GitVersion;
+    [GitVersion] readonly GitVersion GitVersion;
 
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
     AbsolutePath InstallDirectory => RootDirectory.Parent.Parent / "Install" / "Module";
-    AbsolutePath WebProjectDirectory => RootDirectory / "Module.Web";
+    AbsolutePath WebProjectDirectory => RootDirectory / "module.web";
     AbsolutePath TestResultsDirectory => RootDirectory / "TestResults";
     AbsolutePath UnitTestsResultsDirectory => TestResultsDirectory / "UnitTests";
-    AbsolutePath IntegrationTestsResultsDirectory => TestResultsDirectory / "IntegrationTests";
     AbsolutePath GithubDirectory => RootDirectory / ".github";
     AbsolutePath BadgesDirectory => GithubDirectory / "badges";
     AbsolutePath UnitTestBadgesDirectory => BadgesDirectory / "UnitTests";
-    AbsolutePath IntegrationTestsBadgesDirectory => BadgesDirectory / "IntegrationTests";
     AbsolutePath ClientServicesDirectory => WebProjectDirectory / "src" / "services";
-    AbsolutePath DocFxProjectDirectory => RootDirectory / "docfx_project";
     AbsolutePath DocsDirectory => RootDirectory / "docs";
 
     private const string devViewsPath = "http://localhost:3333/build/";
@@ -142,7 +136,6 @@ internal class Build : NukeBuild
             EnsureCleanDirectory(ArtifactsDirectory);
             EnsureCleanDirectory(TestResultsDirectory);
             EnsureCleanDirectory(UnitTestsResultsDirectory);
-            EnsureCleanDirectory(IntegrationTestsResultsDirectory);
         });
 
     Target Restore => _ => _
@@ -153,9 +146,6 @@ internal class Build : NukeBuild
 
             DotNetRestore(s => s
                 .SetProjectFile(Solution.GetProject("UnitTests")));
-
-            DotNetRestore(s => s
-                .SetProjectFile(Solution.GetProject("IntegrationTests")));
         });
 
     Target UnitTests => _ => _
@@ -200,51 +190,8 @@ internal class Build : NukeBuild
             }
         });
 
-    Target IntegrationTests => _ => _
-        .DependsOn(Compile)
-        .Executes(() =>
-        {
-            MSBuild(_ => _
-                .SetConfiguration(Configuration.Debug)
-                .SetProjectFile(Solution.GetProject("IntegrationTests"))
-                .SetTargets("Build")
-                .ResetVerbosity());
-
-            DotNetTest(_ => _
-                .SetConfiguration(Configuration.Debug)
-                .ResetVerbosity()
-                .SetResultsDirectory(IntegrationTestsResultsDirectory)
-                .EnableCollectCoverage()
-                .SetCoverletOutputFormat(CoverletOutputFormat.cobertura)
-                .SetLoggers("trx;LogFileName=IntegrationTests.trx")
-                .SetCoverletOutput(IntegrationTestsResultsDirectory / "coverage.xml")
-                .SetProjectFile(RootDirectory / "IntegrationTests" / "IntegrationTests.csproj")
-                .SetNoBuild(true));
-
-            ReportGenerator(_ => _
-                .SetReports(IntegrationTestsResultsDirectory / "*.xml")
-                .SetReportTypes(ReportTypes.Badges, ReportTypes.HtmlInline, ReportTypes.HtmlChart)
-                .SetHistoryDirectory(RootDirectory / "IntegrationTests" / "history")
-                .SetTargetDirectory(IntegrationTestsResultsDirectory)
-                .AddClassFilters("-*Data.ModuleDbContext")
-                .SetProcessArgumentConfigurator(a => a
-                    .Add("-title:IntegrationTests"))
-                .SetFramework("net5.0"));
-
-            Helpers.CleanCodeCoverageHistoryFiles(RootDirectory / "IntegrationTests" / "history");
-
-            var testBadges = GlobFiles(IntegrationTestsResultsDirectory, "badge_branchcoverage.svg", "badge_linecoverage.svg");
-            testBadges.ForEach(f => CopyFileToDirectory(f, IntegrationTestsBadgesDirectory, FileExistsPolicy.Overwrite, true));
-
-            if (IsWin && (InvokedTargets.Contains(IntegrationTests) || InvokedTargets.Contains(Test)))
-            {
-                Process.Start(@"cmd.exe ", @"/c " + (IntegrationTestsResultsDirectory / "index.html"));
-            }
-        });
-
     Target Test => _ => _
         .DependsOn(UnitTests)
-        .DependsOn(IntegrationTests)
         .Executes(() =>
         {
         });
@@ -553,7 +500,6 @@ internal class Build : NukeBuild
         .DependsOn(SetRelativeScripts)
         .Executes(() =>
         {
-            ResetDocs();
         });
 
     /// <summary>
@@ -563,7 +509,6 @@ internal class Build : NukeBuild
     .DependsOn(SetLiveServer)
     .Executes(() =>
     {
-        ResetDocs();
         NpmRun(s => s
             .SetProcessWorkingDirectory(WebProjectDirectory)
             .AddArguments("start")
@@ -603,7 +548,6 @@ internal class Build : NukeBuild
         .DependsOn(GenerateAppConfig)
         .DependsOn(Test)
         .DependsOn(UpdateTokens)
-        .DependsOn(Docs)
         .Executes(() =>
         {
             var stagingDirectory = ArtifactsDirectory / "staging";
@@ -673,13 +617,10 @@ internal class Build : NukeBuild
                 // Process.Start("explorer.exe", ArtifactsDirectory);
             }
 
-            ResetDocs();
-
             Serilog.Log.Information("Packaging succeeded!");
         });
 
     Target Swagger => _ => _
-        .Before(DocFx)
         .DependsOn(Compile)
         .Executes(() =>
         {
@@ -709,67 +650,8 @@ internal class Build : NukeBuild
                     .Add("/UseAbortSignal:True")));
         });
 
-    Target CleanDocsFolder => _ => _
-        .Before(Swagger)
-        .Before(DocFx)
-        .Executes(() =>
-        {
-            EnsureCleanDirectory(DocsDirectory);
-        });
-
-    Target DocFx => _ => _
-        .DependsOn(Compile)
-        .DependsOn(TsDoc)
-        .DependsOn(ComponentsDocs)
-        .DependsOn(Swagger)
-        .Executes(() =>
-        {
-            DocFXTasks.DocFXMetadata(s => s
-                .SetProcessWorkingDirectory(DocFxProjectDirectory));
-
-            var sb = new StringBuilder();
-            sb.AppendLine("# Backend API documentation")
-                .AppendLine()
-                .AppendLine("This section documents the APIs available in the backend (c#) code.")
-                .AppendLine()
-                .AppendLine("Please expand the namespaces to navigate through the APIs.");
-            WriteAllText(DocFxProjectDirectory / "api" / "index.md", sb.ToString());
-
-            NpmTasks.NpmInstall(s => s
-                .SetProcessWorkingDirectory(DocFxProjectDirectory));
-
-            NpmTasks.NpmRun(s => s
-                .SetProcessWorkingDirectory(DocFxProjectDirectory)
-                .SetArguments("adjust_toc"));
-
-            DocFXTasks.DocFXBuild(s => s
-                .SetOutputFolder(RootDirectory)
-                .SetProcessWorkingDirectory(DocFxProjectDirectory));
-        });
-
-    Target Docs => _ => _
-        .DependsOn(CleanDocsFolder)
-        .DependsOn(Swagger)
-        .DependsOn(ComponentsDocs)
-        .DependsOn(TestsDocs)
-        .DependsOn(TsDoc)
-        .DependsOn(DocFx)
-        .Executes(() =>
-        {
-            if (InvokedTargets.Contains(Docs))
-            {
-                NpmTasks.NpmInstall(s => s
-                    .SetProcessWorkingDirectory(DocFxProjectDirectory));
-
-                NpmTasks.NpmRun(s => s
-                    .SetProcessWorkingDirectory(DocFxProjectDirectory)
-                    .SetArguments("watch_docfx"));
-            }
-        });
-
     Target DeployGeneratedFiles => _ => _
         .OnlyWhenDynamic(() => GitRepository.IsOnDevelopBranch())
-        .DependsOn(Docs)
         .DependsOn(Test)
         .Executes(() =>
         {
@@ -796,117 +678,4 @@ internal class Build : NukeBuild
                 Git($"push --set-upstream origin {GitRepository.Branch}");
             }
         });
-
-    Target TestsDocs => _ => _
-        .DependsOn(Test)
-        .DependsOn(CleanDocsFolder)
-        .Executes(() =>
-        {
-            var integrationTestsDocsDirectory = DocsDirectory / "integrationTests";
-            EnsureCleanDirectory(integrationTestsDocsDirectory);
-            CopyDirectoryRecursively(
-                IntegrationTestsResultsDirectory,
-                integrationTestsDocsDirectory,
-                DirectoryExistsPolicy.Merge,
-                FileExistsPolicy.Overwrite);
-
-            var unitTestsDocsDirectory = DocsDirectory / "unitTests";
-            EnsureCleanDirectory(unitTestsDocsDirectory);
-            CopyDirectoryRecursively(
-                UnitTestsResultsDirectory,
-                unitTestsDocsDirectory,
-                DirectoryExistsPolicy.Merge,
-                FileExistsPolicy.Overwrite);
-        });
-
-    Target TsDoc => _ => _
-        .Executes(() =>
-        {
-            var tempDirectory = WebProjectDirectory / "temp";
-            var tempMdDirectory = WebProjectDirectory / "tempmd";
-            var clientDocDirectory = DocFxProjectDirectory / "client";
-
-            EnsureCleanDirectory(tempDirectory);
-            EnsureCleanDirectory(tempMdDirectory);
-            EnsureCleanDirectory(clientDocDirectory);
-
-            NpmRun(s => s
-                .SetProcessWorkingDirectory(WebProjectDirectory)
-                .SetArguments("tsdoc"));
-
-            CopyDirectoryRecursively(
-                tempMdDirectory,
-                clientDocDirectory,
-                DirectoryExistsPolicy.Merge,
-                FileExistsPolicy.Overwrite);
-
-            // Create a table of content
-            var toc = new StringBuilder();
-
-            var files = GlobFiles(clientDocDirectory, "**/*.md");
-            files = files
-                .OrderBy(f => f.Split('.').Count())
-                .ThenBy(f => f)
-                .ToArray();
-
-            files.ForEach(file =>
-            {
-                var fileInfo = new FileInfo(file);
-                if (fileInfo.Name == "index.md" || fileInfo.Name.Split('.').Count() > 3)
-                {
-                    return;
-                }
-
-                var fileLines = ReadAllLines(file);
-                var cleanName = fileLines[4];
-                cleanName = string.Join(' ', cleanName.Split(' ').Skip(1).ToArray());
-                toc.AppendLine($"{new String('#', fileInfo.Name.Split('.').Count() - 1)} [{cleanName}](./{fileInfo.Name})");
-            });
-            WriteAllText(clientDocDirectory / "toc.md", toc.ToString());
-
-            DeleteDirectory(tempDirectory);
-            DeleteDirectory(tempMdDirectory);
-        });
-
-    Target ComponentsDocs => _ => _
-        .DependsOn(BuildFrontEnd)
-        .Executes(() =>
-        {
-            var componentsDocsDirectory = DocFxProjectDirectory / "components";
-            EnsureCleanDirectory(componentsDocsDirectory);
-            var docFiles = GlobFiles(WebProjectDirectory / "src" / "components", "**/*.md");
-            var toc = new StringBuilder();
-            docFiles.ForEach(f =>
-            {
-                var fileInfo = new FileInfo(f);
-                if (fileInfo.Directory.Name == "usage")
-                {
-                    return;
-                }
-                var newFileName = fileInfo.Directory.Name + ".md";
-                CopyFile(f, componentsDocsDirectory / newFileName, FileExistsPolicy.Overwrite, true);
-                toc.AppendLine($"# [{fileInfo.Directory.Name}]({newFileName})");
-            });
-            toc.AppendLine();
-            WriteAllText(componentsDocsDirectory / "toc.md", toc.ToString());
-
-            var index = GlobFiles(WebProjectDirectory, "readme.md").FirstOrDefault();
-            CopyFileToDirectory(index, componentsDocsDirectory, FileExistsPolicy.Overwrite, true);
-            RenameFile(componentsDocsDirectory / "readme.md", "index.md", FileExistsPolicy.Overwrite);
-        });
-
-    private void ResetDocs()
-    {
-        if (GitRepository != null && IsLocalBuild)
-        {
-            try
-            {
-                Git("checkout -q HEAD -- docs", workingDirectory: RootDirectory);
-            }
-            catch (Exception)
-            {
-                // Ignored on purpose, if this fails, we just don't have a docs folder so everything is ok.
-            }
-        }
-    }
 }
