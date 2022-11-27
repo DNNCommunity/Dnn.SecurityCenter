@@ -1,5 +1,6 @@
 const dnnVersions: string[] = [
     'All Versions',
+    '09.11.00',
     '09.10.01',
     '09.10.00',
     '09.09.01',
