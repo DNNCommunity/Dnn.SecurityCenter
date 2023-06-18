@@ -248,6 +248,10 @@ export class UIInfo implements IUIInfo {
     dnnPlatformVersion?: string | undefined;
     /** Gets or sets the DnnSecurityCenter localized text. */
     dnnSecurityCenter?: string | undefined;
+    /** Gets or sets the Loading localized text. */
+    loading?: string | undefined;
+    /** Gets or sets the NoBulletins localized text. */
+    noBulletins?: string | undefined;
 
     constructor(data?: IUIInfo) {
         if (data) {
@@ -262,6 +266,8 @@ export class UIInfo implements IUIInfo {
         if (_data) {
             this.dnnPlatformVersion = _data["DnnPlatformVersion"];
             this.dnnSecurityCenter = _data["DnnSecurityCenter"];
+            this.loading = _data["Loading"];
+            this.noBulletins = _data["NoBulletins"];
         }
     }
 
@@ -276,6 +282,8 @@ export class UIInfo implements IUIInfo {
         data = typeof data === 'object' ? data : {};
         data["DnnPlatformVersion"] = this.dnnPlatformVersion;
         data["DnnSecurityCenter"] = this.dnnSecurityCenter;
+        data["Loading"] = this.loading;
+        data["NoBulletins"] = this.noBulletins;
         return data;
     }
 }
@@ -286,6 +294,10 @@ export interface IUIInfo {
     dnnPlatformVersion?: string | undefined;
     /** Gets or sets the DnnSecurityCenter localized text. */
     dnnSecurityCenter?: string | undefined;
+    /** Gets or sets the Loading localized text. */
+    loading?: string | undefined;
+    /** Gets or sets the NoBulletins localized text. */
+    noBulletins?: string | undefined;
 }
 
 /** A viewmodel that represents DNN Security Bulletins. */

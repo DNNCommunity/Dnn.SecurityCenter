@@ -123,4 +123,10 @@
   <data name="DnnSecurityCenter.Text" xml:space="preserve">
     <value>DNN Security Center</value>
   </data>
+  <data name="Loading.Text" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="NoBulletins.Text" xml:space="preserve">
+    <value>There are no known security vulnerabilities for the selected DNN Platform version.</value>
+  </data>
 </root>
