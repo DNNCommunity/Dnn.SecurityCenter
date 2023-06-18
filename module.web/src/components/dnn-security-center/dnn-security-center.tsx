@@ -58,6 +58,7 @@ export class DnnSecurityCenter {
   }
 
   private handleSelect(event): void {
+    this.securityBulletins = undefined;
     this.selectValue = event.target.value;
     if (this.selectValue === 'All Versions') {
       window.location.reload();
@@ -98,6 +99,12 @@ export class DnnSecurityCenter {
             )}
           </select>
         </h3>
+        {this.securityBulletins === undefined &&
+          <div class="loading">{this.resx.uI.loading}</div>
+        }
+        {this.securityBulletins?.bulletins?.length === 0 &&
+          <div class="no-bulletins">{this.resx.uI.noBulletins}</div>
+        }
         {this.securityBulletins?.bulletins?.map((bulletin, index) => {
           return (
             <div class="bulletins">

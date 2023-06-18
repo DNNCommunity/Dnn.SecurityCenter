@@ -88,6 +88,8 @@ namespace Dnn.Modules.SecurityCenter.Services
             {
                 DnnPlatformVersion = this.GetString("DnnPlatformVersion", "UI.resx"),
                 DnnSecurityCenter = this.GetString("DnnSecurityCenter", "UI.resx"),
+                Loading = this.GetString("Loading", "UI.resx"),
+                NoBulletins = this.GetString("NoBulletins", "UI.resx"),
 
             };
             viewModel.UI = ui;
