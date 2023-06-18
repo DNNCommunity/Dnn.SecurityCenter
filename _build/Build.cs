@@ -81,7 +81,7 @@ internal class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
-    [GitVersion] readonly GitVersion GitVersion;
+    [GitVersion(Framework = "net6.0", UpdateAssemblyInfo = false, NoFetch = true)] readonly GitVersion GitVersion;
 
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
     AbsolutePath InstallDirectory => RootDirectory.Parent.Parent / "Install" / "Module";
@@ -443,6 +443,7 @@ internal class Build : NukeBuild
     Target TagRelease => _ => _
         .OnlyWhenDynamic(() => GitRepository != null && (GitRepository.IsOnMainOrMasterBranch() || GitRepository.IsOnReleaseBranch()))
         .OnlyWhenDynamic(() => !string.IsNullOrWhiteSpace(GitHubToken))
+        .DependsOn(LogInfo)
         .DependsOn(SetupGitHubClient)
         .DependsOn(UpdateTokens)
         .Before(Compile)
