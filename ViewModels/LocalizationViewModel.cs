@@ -55,6 +55,14 @@ namespace Dnn.Modules.SecurityCenter.ViewModels
             /// <example>DNN Security Center</example>
             public string DnnSecurityCenter { get; set; }
 
+            /// <summary>Gets or sets the Loading localized text.</summary>
+            /// <example>Loading...</example>
+            public string Loading { get; set; }
+
+            /// <summary>Gets or sets the NoBulletins localized text.</summary>
+            /// <example>There are no known security vulnerabilities for the selected DNN Platform version.</example>
+            public string NoBulletins { get; set; }
+
 
         }
 

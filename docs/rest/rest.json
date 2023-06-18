@@ -111,6 +111,16 @@
           "type": "string",
           "description": "Gets or sets the DnnSecurityCenter localized text.",
           "example": "DNN Security Center"
+        },
+        "Loading": {
+          "type": "string",
+          "description": "Gets or sets the Loading localized text.",
+          "example": "Loading..."
+        },
+        "NoBulletins": {
+          "type": "string",
+          "description": "Gets or sets the NoBulletins localized text.",
+          "example": "There are no known security vulnerabilities for the selected DNN Platform version."
         }
       }
     },
