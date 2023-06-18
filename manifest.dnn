@@ -15,7 +15,7 @@
       <releaseNotes src="ReleaseNotes.html" />
       <azureCompatible>True</azureCompatible>
       <dependencies>
-        <dependency type="coreVersion">09.10.02</dependency>
+        <dependency type="coreVersion">09.11.01</dependency>
       </dependencies>
       <components>
         <component type="Assembly">
@@ -27,7 +27,7 @@
             <assembly>
               <name>NSwag.Annotations.dll</name>
               <path>bin</path>
-              <version>13.17.0</version>
+              <version>13.19.0</version>
             </assembly>
           </assemblies>
         </component>
