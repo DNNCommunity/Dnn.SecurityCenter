@@ -2,7 +2,8 @@ import { Component, h, Prop, Host, Element, State } from "@stencil/core";
 import { LocalizationClient, SecurityClient, LocalizationViewModel, SecurityBulletinsViewModel } from "../../services/services";
 import state, { localizationState } from "../../store/state";
 import alertError from "../../services/alert-error";
-import dnnVersions from "../../data/dnn-versions";
+import GithubService from "../../services/github";
+import preGitHubDnnVersions from "../../data/pre-github-dnn-versions";
 import { Debounce } from "@dnncommunity/dnn-elements";
 
 @Component({
@@ -14,11 +15,13 @@ export class DnnSecurityCenter {
   private localizationClient: LocalizationClient;
   private securityClient: SecurityClient;
   private resx: LocalizationViewModel;
-  
+  private githubService: GithubService;
+
   constructor() {
     state.moduleId = this.moduleId;
     this.localizationClient = new LocalizationClient({ moduleId: this.moduleId });
     this.securityClient = new SecurityClient({ moduleId: this.moduleId });
+    this.githubService = new GithubService();
   }
   
   @Element() el: HTMLDnnSecurityCenterElement;
@@ -29,9 +32,11 @@ export class DnnSecurityCenter {
   @State() selectValue: string = '090101';
   @State() securityBulletins: SecurityBulletinsViewModel;
   @State() expandedBulletinIndex: number;
+  @State() dnnVersions: string[];
 
   componentWillLoad() {
     return new Promise<void>((resolve, reject) => {
+      this.getDnnTags();
       this.localizationClient.getLocalization()
         .then(l => {
           localizationState.viewModel = l;
@@ -47,6 +52,16 @@ export class DnnSecurityCenter {
 
   componentDidLoad() {
     this.getSecurityBulletins();
+  }
+
+  private getDnnTags() {
+    this.githubService.getTags().then(data => {
+      this.dnnVersions = data;
+      this.dnnVersions.unshift('All Versions');
+      this.dnnVersions = [...this.dnnVersions, ...preGitHubDnnVersions]
+    }).catch(reason => {
+      alertError(reason);
+    });
   }
 
   private getSecurityBulletins() {
@@ -91,14 +106,16 @@ export class DnnSecurityCenter {
     return <Host>
       <div>
         <h1>{this.resx.uI.dnnSecurityCenter}</h1>
-        <h3>
-          {this.resx.uI.dnnPlatformVersion}: &nbsp;
-          <select name="dnnVersions" onInput={e => this.handleSelect(e)}>
-            {dnnVersions.map(version => 
-              <option value={version.replace(/\./g, '')}>{version}</option>
-            )}
-          </select>
-        </h3>
+        {this.dnnVersions &&
+          <h3>
+            {this.resx.uI.dnnPlatformVersion}: &nbsp;
+            <select name="dnnVersions" onInput={e => this.handleSelect(e)}>
+              {this.dnnVersions.map(version => 
+                <option value={version.replace(/\./g, '')}>{version}</option>
+              )}
+            </select>
+          </h3>
+        }
         {this.securityBulletins === undefined &&
           <div class="loading">{this.resx.uI.loading}</div>
         }
