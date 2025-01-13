@@ -216,12 +216,18 @@ internal class Build : NukeBuild
                 fileVersion = GitVersion.InformationalVersion;
             }
 
-            DotNetTasks.DotNetBuild(s => s
-                .DisableTreatWarningsAsErrors()
-                .SetProjectFile(Solution.GetProject("Module"))
+            DotNetTasks.DotNetMSBuild(s => s
+                .SetTargetPath(Solution.GetProject("Module"))
                 .SetConfiguration(Configuration)
                 .SetAssemblyVersion(assemblyVersion)
                 .SetFileVersion(fileVersion));
+
+            //DotNetTasks.DotNetBuild(s => s
+            //    .DisableTreatWarningsAsErrors()
+            //    .SetProjectFile(Solution.GetProject("Module"))
+            //    .SetConfiguration(Configuration)
+            //    .SetAssemblyVersion(assemblyVersion)
+            //    .SetFileVersion(fileVersion));
         });
 
     Target SetManifestVersions => _ => _
