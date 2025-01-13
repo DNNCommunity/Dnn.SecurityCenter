@@ -23,17 +23,16 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@dnncommunity/dnn-elements": "^0.18.0",
-    "@stencil/core": "^3.4.0",
+    "@dnncommunity/dnn-elements": "^0.25.1",
+    "@stencil/core": "^4.23.2",
     "@stencil/eslint-plugin": "^0.4.0",
-    "@stencil/sass": "^3.0.4",
-    "@stencil/store": "^2.0.8",
-    "@typescript-eslint/eslint-plugin": "^4.31.0",
-    "@typescript-eslint/parser": "^4.31.1",
+    "@stencil/sass": "^3.0.12",
+    "@stencil/store": "^2.0.16",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
     "eslint-plugin-tsdoc": "^0.2.17",
-    "octokit": "^2.0.22",
-    "typescript": "^4.9.5"
+    "octokit": "^2.1.0"
   },
   "license": "MIT"
 }
