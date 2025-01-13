@@ -42,7 +42,7 @@ using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
 
 [GitHubActions(
     "Release",
-    GitHubActionsImage.UbuntuLatest,
+    GitHubActionsImage.WindowsLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPushBranches = new[] { "master", "main", "release/*" },
     InvokedTargets = new[] { nameof(Release) },
@@ -50,7 +50,7 @@ using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
 )]
 [GitHubActions(
     "PR_Validation",
-    GitHubActionsImage.UbuntuLatest,
+    GitHubActionsImage.WindowsLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPullRequestBranches = new[] { "master", "main", "develop", "development", "release/*" },
     InvokedTargets = new[] { nameof(Package) },
@@ -58,7 +58,7 @@ using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
 )]
 [GitHubActions(
     "Build",
-    GitHubActionsImage.UbuntuLatest,
+    GitHubActionsImage.WindowsLatest,
     ImportSecrets = new[] { nameof(GitHubToken) },
     OnPushBranches = new[] { "master", "develop", "release/*" },
     InvokedTargets = new[] { nameof(DeployGeneratedFiles) },
