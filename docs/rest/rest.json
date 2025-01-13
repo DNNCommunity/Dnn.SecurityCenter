@@ -1,16 +1,10 @@
 {
-  "x-generator": "NSwag v13.15.10.0 (NJsonSchema v10.6.10.0 (Newtonsoft.Json v13.0.0.0))",
-  "swagger": "2.0",
+  "x-generator": "NSwag v14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
   "info": {
     "title": "DNN Community DNN Security Center",
     "version": "1.4.0.0"
   },
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
   "paths": {
     "/Localization/GetLocalization": {
       "get": {
@@ -21,10 +15,18 @@
         "operationId": "Localization_GetLocalization",
         "responses": {
           "200": {
-            "x-nullable": false,
             "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/LocalizationViewModel"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true,
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/LocalizationViewModel"
+                    }
+                  ]
+                }
+              }
             }
           }
         }
@@ -39,139 +41,169 @@
         "operationId": "Security_GetSecurityBulletins",
         "parameters": [
           {
-            "type": "string",
             "name": "versionString",
             "in": "query",
             "required": true,
             "description": "The version for which to get the security bulletins for in the format 090202 for v9.9.2.",
-            "x-nullable": true
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
           }
         ],
         "responses": {
           "200": {
-            "x-nullable": false,
             "description": "A list of DNN security bulletins.",
-            "schema": {
-              "$ref": "#/definitions/SecurityBulletinsViewModel"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true,
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/SecurityBulletinsViewModel"
+                    }
+                  ]
+                }
+              }
             }
           }
         }
       }
     }
   },
-  "definitions": {
-    "LocalizationViewModel": {
-      "type": "object",
-      "description": "A viewmodel that exposes all resource keys in strong types.",
-      "properties": {
-        "ModelValidation": {
-          "description": "Localized strings present the ModelValidation resources.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ModelValidationInfo"
-            }
-          ]
-        },
-        "UI": {
-          "description": "Localized strings present the UI resources.",
-          "allOf": [
-            {
-              "$ref": "#/definitions/UIInfo"
-            }
-          ]
-        }
-      }
-    },
-    "ModelValidationInfo": {
-      "type": "object",
-      "description": "Localized strings for the ModelValidation resources.",
-      "properties": {
-        "IdGreaterThanZero": {
-          "type": "string",
-          "description": "Gets or sets the IdGreaterThanZero localized text.",
-          "example": "The Id must be an integer bigger than 0"
-        },
-        "NameRequired": {
-          "type": "string",
-          "description": "Gets or sets the NameRequired localized text.",
-          "example": "The name is required"
-        }
-      }
-    },
-    "UIInfo": {
-      "type": "object",
-      "description": "Localized strings for the UI resources.",
-      "properties": {
-        "DnnPlatformVersion": {
-          "type": "string",
-          "description": "Gets or sets the DnnPlatformVersion localized text.",
-          "example": "DNN Platform Version"
-        },
-        "DnnSecurityCenter": {
-          "type": "string",
-          "description": "Gets or sets the DnnSecurityCenter localized text.",
-          "example": "DNN Security Center"
-        },
-        "Loading": {
-          "type": "string",
-          "description": "Gets or sets the Loading localized text.",
-          "example": "Loading..."
-        },
-        "NoBulletins": {
-          "type": "string",
-          "description": "Gets or sets the NoBulletins localized text.",
-          "example": "There are no known security vulnerabilities for the selected DNN Platform version."
-        }
-      }
-    },
-    "SecurityBulletinsViewModel": {
-      "type": "object",
-      "description": "A viewmodel that represents DNN Security Bulletins.",
-      "properties": {
-        "Title": {
-          "type": "string",
-          "description": "Gets or sets the title of the RSS feed."
-        },
-        "Link": {
-          "type": "string",
-          "description": "Gets or sets the url to download DNN Platform."
-        },
-        "Description": {
-          "type": "string",
-          "description": "Gets or sets the RSS feed description."
-        },
-        "Bulletins": {
-          "type": "array",
-          "description": "Gets or sets the list of security bulletins.",
-          "items": {
-            "$ref": "#/definitions/Bulletin"
+  "components": {
+    "schemas": {
+      "LocalizationViewModel": {
+        "type": "object",
+        "description": "A viewmodel that exposes all resource keys in strong types.",
+        "additionalProperties": false,
+        "properties": {
+          "ModelValidation": {
+            "description": "Localized strings present the ModelValidation resources.",
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ModelValidationInfo"
+              }
+            ]
+          },
+          "UI": {
+            "description": "Localized strings present the UI resources.",
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UIInfo"
+              }
+            ]
           }
         }
-      }
-    },
-    "Bulletin": {
-      "type": "object",
-      "description": "Represents a single DNN Security Bulletin.",
-      "required": [
-        "PublicationDateUtc"
-      ],
-      "properties": {
-        "Link": {
-          "type": "string",
-          "description": "Gets or sets a link to the detailed security bulletin."
-        },
-        "Title": {
-          "type": "string",
-          "description": "Gets or sets the title of the bulletin."
-        },
-        "Description": {
-          "type": "string",
-          "description": "Gets or sets the short description of the bulletin."
-        },
-        "PublicationDateUtc": {
-          "type": "string",
-          "description": "Gets or sets a string representing the date of announcement.",
-          "format": "date-time"
+      },
+      "ModelValidationInfo": {
+        "type": "object",
+        "description": "Localized strings for the ModelValidation resources.",
+        "additionalProperties": false,
+        "properties": {
+          "IdGreaterThanZero": {
+            "type": "string",
+            "description": "Gets or sets the IdGreaterThanZero localized text.",
+            "nullable": true,
+            "example": "The Id must be an integer bigger than 0"
+          },
+          "NameRequired": {
+            "type": "string",
+            "description": "Gets or sets the NameRequired localized text.",
+            "nullable": true,
+            "example": "The name is required"
+          }
+        }
+      },
+      "UIInfo": {
+        "type": "object",
+        "description": "Localized strings for the UI resources.",
+        "additionalProperties": false,
+        "properties": {
+          "DnnPlatformVersion": {
+            "type": "string",
+            "description": "Gets or sets the DnnPlatformVersion localized text.",
+            "nullable": true,
+            "example": "DNN Platform Version"
+          },
+          "DnnSecurityCenter": {
+            "type": "string",
+            "description": "Gets or sets the DnnSecurityCenter localized text.",
+            "nullable": true,
+            "example": "DNN Security Center"
+          },
+          "Loading": {
+            "type": "string",
+            "description": "Gets or sets the Loading localized text.",
+            "nullable": true,
+            "example": "Loading..."
+          },
+          "NoBulletins": {
+            "type": "string",
+            "description": "Gets or sets the NoBulletins localized text.",
+            "nullable": true,
+            "example": "There are no known security vulnerabilities for the selected DNN Platform version."
+          }
+        }
+      },
+      "SecurityBulletinsViewModel": {
+        "type": "object",
+        "description": "A viewmodel that represents DNN Security Bulletins.",
+        "additionalProperties": false,
+        "properties": {
+          "Title": {
+            "type": "string",
+            "description": "Gets or sets the title of the RSS feed.",
+            "nullable": true
+          },
+          "Link": {
+            "type": "string",
+            "description": "Gets or sets the url to download DNN Platform.",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "description": "Gets or sets the RSS feed description.",
+            "nullable": true
+          },
+          "Bulletins": {
+            "type": "array",
+            "description": "Gets or sets the list of security bulletins.",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Bulletin"
+            }
+          }
+        }
+      },
+      "Bulletin": {
+        "type": "object",
+        "description": "Represents a single DNN Security Bulletin.",
+        "additionalProperties": false,
+        "properties": {
+          "Link": {
+            "type": "string",
+            "description": "Gets or sets a link to the detailed security bulletin.",
+            "nullable": true
+          },
+          "Title": {
+            "type": "string",
+            "description": "Gets or sets the title of the bulletin.",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "description": "Gets or sets the short description of the bulletin.",
+            "nullable": true
+          },
+          "PublicationDateUtc": {
+            "type": "string",
+            "description": "Gets or sets a string representing the date of announcement.",
+            "format": "date-time"
+          }
         }
       }
     }
