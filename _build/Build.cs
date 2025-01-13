@@ -216,7 +216,7 @@ internal class Build : NukeBuild
                 fileVersion = GitVersion.InformationalVersion;
             }
 
-            MSBuildTasks.MSBuild(s => s
+            DotNetTasks.DotNetBuild(s => s
                 .SetProjectFile(Solution.GetProject("Module"))
                 .SetConfiguration(Configuration)
                 .SetAssemblyVersion(assemblyVersion)
