@@ -217,6 +217,7 @@ internal class Build : NukeBuild
             }
 
             DotNetTasks.DotNetBuild(s => s
+                .DisableTreatWarningsAsErrors()
                 .SetProjectFile(Solution.GetProject("Module"))
                 .SetConfiguration(Configuration)
                 .SetAssemblyVersion(assemblyVersion)
