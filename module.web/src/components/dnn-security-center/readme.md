@@ -16,14 +16,17 @@ Root component that does all the module rendering.
 
 ### Depends on
 
+- dnn-select
 - dnn-chevron
 - dnn-collapsible
 
 ### Graph
 ```mermaid
 graph TD;
+  dnn-security-center --> dnn-select
   dnn-security-center --> dnn-chevron
   dnn-security-center --> dnn-collapsible
+  dnn-select --> dnn-fieldset
   style dnn-security-center fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
