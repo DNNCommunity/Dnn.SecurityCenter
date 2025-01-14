@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Element, State } from "@stencil/core";
+import { Component, h, Prop, Host, Element, State, Watch } from "@stencil/core";
 import { LocalizationClient, SecurityClient, LocalizationViewModel, SecurityBulletinsViewModel } from "../../services/services";
 import state, { localizationState } from "../../store/state";
 import alertError from "../../services/alert-error";
@@ -29,10 +29,16 @@ export class DnnSecurityCenter {
   /** The Dnn module id, required in order to access web services. */
   @Prop() moduleId!: number;
   
-  @State() selectValue: string = '090101';
   @State() securityBulletins: SecurityBulletinsViewModel;
   @State() expandedBulletinIndex: number;
   @State() dnnVersions: string[];
+  @State() selectValue: string;
+  @Watch('selectValue')
+  selectValueChanged(newValue: string, oldValue: string) {
+    if (newValue !== oldValue) {
+      this.getSecurityBulletins();
+    }
+  }
 
   componentWillLoad() {
     return new Promise<void>((resolve, reject) => {
@@ -50,36 +56,22 @@ export class DnnSecurityCenter {
     });
   }
 
-  componentDidLoad() {
-    this.getSecurityBulletins();
-  }
-
   private getDnnTags() {
     this.githubService.getTags().then(data => {
       this.dnnVersions = data;
-      this.dnnVersions.unshift('All Versions');
       this.dnnVersions = [...this.dnnVersions, ...preGitHubDnnVersions]
+      this.selectValue = this.dnnVersions[0].replace(/\./g, '');
     }).catch(reason => {
       alertError(reason);
     });
   }
-
+  
   private getSecurityBulletins() {
     this.securityClient.getSecurityBulletins(this.selectValue).then(data => {
       this.securityBulletins = data;
     }).catch(reason => {
       alertError(reason);
     });
-  }
-
-  private handleSelect(event): void {
-    this.securityBulletins = undefined;
-    this.selectValue = event.target.value;
-    if (this.selectValue === 'All Versions') {
-      window.location.reload();
-      return;
-    }
-    this.getSecurityBulletins();
   }
 
   private decodeHtml(text: string): string {
@@ -107,14 +99,11 @@ export class DnnSecurityCenter {
       <div>
         <h1>{this.resx.uI.dnnSecurityCenter}</h1>
         {this.dnnVersions &&
-          <h3>
-            {this.resx.uI.dnnPlatformVersion}: &nbsp;
-            <select name="dnnVersions" onInput={e => this.handleSelect(e)}>
-              {this.dnnVersions.map(version => 
-                <option value={version.replace(/\./g, '')}>{version}</option>
-              )}
-            </select>
-          </h3>
+          <dnn-select label={this.resx.uI.dnnPlatformVersion} name="dnnVersions" onValueChange={e => this.selectValue = e.detail}>
+            {this.dnnVersions.map(version => 
+              <option value={version.replace(/\./g, '')} selected={this.selectValue == version.replace(/\./g, '')}>{version}&nbsp;&nbsp;</option>
+            )}
+          </dnn-select>
         }
         {this.securityBulletins === undefined &&
           <div class="loading">{this.resx.uI.loading}</div>

@@ -1,6 +1,6 @@
 <dotnetnuke version="5.0" type="Package">
   <packages>
-    <package name="DNNCommunity_SecurityCenter" type="Module" version="01.03.00">
+    <package name="DNNCommunity_SecurityCenter" type="Module" version="01.04.00">
       <friendlyName>DNN Security Center</friendlyName>
       <description>DNN Security Center</description>
       <iconFile>~/DesktopModules/Dnn.SecurityCenter/resources/images/module-icon.png</iconFile>
@@ -55,7 +55,7 @@
             </moduleDefinitions>
           </desktopModule>
         </component>
-        <component type="Cleanup" version="01.03.00" glob="DesktopModules/Dnn.SecurityCenter/resources/**/*" />
+        <component type="Cleanup" version="01.04.00" glob="DesktopModules/Dnn.SecurityCenter/resources/**/*" />
         <component type="ResourceFile">
           <resourceFiles>
             <basePath>DesktopModules/Dnn.SecurityCenter/resources</basePath>

@@ -1,17 +1,19 @@
+
 :host {
   display: block;
-
+  
   .header {
     display: flex;
     justify-content: space-between;
   }
+  
+  dnn-select {
+    --control-radius: 10px;
+    min-width: 20em;
+  }
 
-  select {
-    background-color: whitesmoke;
-    border-radius: 10px;
-    border: 0px;
-    padding: 10px;
-    font-size: large;
+  .no-bulletins {
+    margin-top: 1em;
   }
 
   .collapse-row{
