@@ -99,14 +99,11 @@ export class DnnSecurityCenter {
       <div>
         <h1>{this.resx.uI.dnnSecurityCenter}</h1>
         {this.dnnVersions &&
-          <h3>
-            {this.resx.uI.dnnPlatformVersion}: &nbsp;
-            <dnn-select name="dnnVersions" onValueChange={e => this.selectValue = e.detail}>
-              {this.dnnVersions.map(version => 
-                <option value={version.replace(/\./g, '')} selected={this.selectValue == version.replace(/\./g, '')}>{version}</option>
-              )}
-            </dnn-select>
-          </h3>
+          <dnn-select label={this.resx.uI.dnnPlatformVersion} name="dnnVersions" onValueChange={e => this.selectValue = e.detail}>
+            {this.dnnVersions.map(version => 
+              <option value={version.replace(/\./g, '')} selected={this.selectValue == version.replace(/\./g, '')}>{version}&nbsp;&nbsp;</option>
+            )}
+          </dnn-select>
         }
         {this.securityBulletins === undefined &&
           <div class="loading">{this.resx.uI.loading}</div>
